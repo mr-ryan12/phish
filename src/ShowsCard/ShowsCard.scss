@@ -1,9 +1,13 @@
 .show-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f6f5f6;
   border: 5px solid black;
   text-decoration: none;
-  color: #FFF;
-  font-size: 3vh;
+  color: #000;
+  font-size: 2vh;
   padding: 10px;
   width: 21.8vw;
-  font-size: 50%;
+  // font-size: 50%;
 }
