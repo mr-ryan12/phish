@@ -15,7 +15,7 @@ const Years = props => {
         key={year.date}
         id={year.date}
         date={year.date}
-        showCount={year.showCount}
+        show_count={year.show_count}
       />
     )
   })

@@ -1,7 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import PropTypes, { string } from 'prop-types'
 import phishLogo from '../assets/phish-logo.png'
 import './YearCard.scss'
+import { number } from 'prop-types'
 
 const YearCard = props => {
   return (
@@ -14,7 +15,8 @@ const YearCard = props => {
 }
 
 YearCard.propTypes = {
-
+  date: string.isRequired,
+  show_count: number.isRequired
 }
 
 export default YearCard
