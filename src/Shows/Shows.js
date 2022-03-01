@@ -53,7 +53,7 @@ class Shows extends Component {
     })
     return (
       <section className="main-shows-container">
-        <h2>{this.props.year} Shows</h2>
+        <h2 className="shows-page-heading">{this.props.year} Shows</h2>
         <section className="shows-container">
           {allShows}
         </section>
