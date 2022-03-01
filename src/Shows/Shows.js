@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { fetchYearData } from '../apiCalls'
+import PropTypes from 'prop-types'
+import ShowsCard from '../ShowsCard/ShowsCard'
 import './Shows.scss'
 
 class Shows extends Component {
@@ -54,7 +55,7 @@ class Shows extends Component {
       <section className="main-shows-container">
         <h2>{this.props.year} Shows</h2>
         <section className="shows-container">
-
+          {allShows}
         </section>
       </section>
     )
@@ -62,7 +63,7 @@ class Shows extends Component {
 }
 
 Shows.propTypes = {
-
+  year: PropTypes.string.isRequired
 }
 
 export default Shows
