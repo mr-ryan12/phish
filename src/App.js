@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Route, Switch } from 'react-router-dom'
 import { fetchYears } from './apiCalls'
 import Years from './Years/Years'
 import './App.scss'
@@ -25,7 +26,9 @@ class App extends Component {
     return (
       <main className="App">
         <h1>PHISH</h1>
-        <Years years={this.state.years}/>
+        <Switch>
+          <Route exact path="/" render={() => <Years years={this.state.years}/>}/>
+        </Switch>
       </main>
     )
   }
