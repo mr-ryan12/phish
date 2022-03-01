@@ -1,0 +1,19 @@
+body {
+  height: 100vh;
+  width: auto;
+  background-image: url('./assets/backdrop.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Michroma', sans-serif;
+}
+
+h1 {
+  margin: 0;
+  color: #FFF;
+  font-size: 7vh;
+}
