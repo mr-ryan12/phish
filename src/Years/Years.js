@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import phishLogo from '../assets/phish-logo.png'
 import './Years.scss'
 
@@ -17,6 +18,10 @@ const Years = props => {
       {allYears}
     </section>
   )
+}
+
+Years.propTypes = {
+  years: PropTypes.array.isRequired,
 }
 
 export default Years

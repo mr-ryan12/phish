@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { fetchYears } from './apiCalls'
+import PropTypes from 'prop-types'
 import Years from './Years/Years'
 import './App.scss'
 
