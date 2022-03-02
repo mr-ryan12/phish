@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import { fetchYears } from './apiCalls'
 import Years from './Years/Years'
 import Shows from './Shows/Shows'
+import ShowDetails from './ShowDetails/ShowDetails'
 import './App.scss'
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => <Years years={this.state.years}/>}/>
           <Route exact path="/:year" render={({ match }) => <Shows year={match.params.year}/>}/>
+          <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id}/>}/>
         </Switch>
       </main>
     )

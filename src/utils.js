@@ -12,4 +12,11 @@ const cleanDates = data => {
   return cleanedDates
 }
 
-export { cleanDates }
+const cleanDate = show => {
+  const [year, month, day] = show.date.split('-')
+  show.date = [month, day, year].join('-')
+
+  return show
+}
+
+export { cleanDate, cleanDates }
