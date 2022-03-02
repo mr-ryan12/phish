@@ -1,0 +1,32 @@
+.navigation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 22vw;
+}
+
+.nav-link-container > button,
+.nav-link-container > a {
+  background-color: transparent;
+  color: #FFF;
+  font-family: inherit;
+  font-size: 2vh;
+  border: none;
+  margin: 8%;
+  text-decoration: none;
+}
+
+.random-show-link {
+  width: 20vw;
+}
+
+.navigation-container > button:hover {
+  cursor: pointer;
+}
