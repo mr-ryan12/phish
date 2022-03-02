@@ -3,15 +3,6 @@ import PropTypes from 'prop-types'
 import './Tracks.scss'
 
 const Tracks = props => {
-  // console.log(props)
-  // const allTracks = props.tracks.map(track => {
-  //   return (
-  //     <section className="track-card">
-  //       <h2>{track.title}</h2>
-  //       <video controls name="media" src={track.mp3}></video>
-  //     </section>
-  //   )
-  // })
   return (
     <section className="track-card">
       <h2>{props.title}</h2>
@@ -21,7 +12,8 @@ const Tracks = props => {
 }
 
 Tracks.propTypes = {
-
+  title: PropTypes.string.isRequired,
+  mp3: PropTypes.string.isRequired
 }
 
 export default Tracks 

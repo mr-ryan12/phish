@@ -51,7 +51,9 @@ class ShowDetails extends Component {
       <section className="show-details-container">
         <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
         <p style={{color: 'white'}}>{this.state.show.date}</p>
-        {this.renderTracks()}
+        <section className="tracks-container">
+          {this.renderTracks()}
+        </section>
       </section>
     )
   }
