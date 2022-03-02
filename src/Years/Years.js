@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import YearCard from '../YearCard/YearCard'
+import NavigationHomepage from '../NavigationHomepage/NavigationHomepage'
 import './Years.scss'
 
 const Years = props => {
@@ -15,9 +16,12 @@ const Years = props => {
     )
   })
   return (
-    <section className="years-container">
-      {allYears}
-    </section>
+    <>
+      <NavigationHomepage/>
+      <section className="years-container">
+        {allYears}
+      </section>
+    </>
   )
 }
 

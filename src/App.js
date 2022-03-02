@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { fetchYears } from './apiCalls'
-import Navigation from './Navigation/Navigation'
+import NavigationHomepage from './NavigationHomepage/NavigationHomepage'
 import Years from './Years/Years'
 import Shows from './Shows/Shows'
 import ShowDetails from './ShowDetails/ShowDetails'
@@ -28,8 +28,8 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <h1>PHISH</h1>
-        <Navigation/>
+        {/* <h1>PHISH</h1> */}
+        {/* <NavigationHomepage/> */}
         <Switch>
           <Route exact path="/" render={() => <Years years={this.state.years}/>}/>
           <Route exact path="/:year" render={({ match }) => <Shows year={match.params.year}/>}/>
