@@ -15,7 +15,12 @@ const ShowsCard = props => {
 }
 
 ShowsCard.propTypes = {
-
+  id: PropTypes.number.isRequired,
+  year: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  venueName: PropTypes.string.isRequired,
+  numOfTracks: PropTypes.number.isRequired
 }
 
 export default ShowsCard
