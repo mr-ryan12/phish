@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './NavigationShows.scss'
 
+// add a 'to=' attribute to Link
 const NavigationShows = () => {
   return (
-    <section className="navigation-container">
+    <section className="navigation-container-shows">
       <h1>PHISH</h1>
-      <section className="nav-link-container">
+      <section className="nav-link-container-shows">
         <Link to="/">Home</Link>
-        <button className="random-show-link">Random Show</button>
+        <Link className="random-show-link">Random Show</Link>
       </section>
     </section>
   )

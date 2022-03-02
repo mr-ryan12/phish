@@ -4,6 +4,7 @@ import { cleanDate } from '../utils'
 import PropTypes from 'prop-types'
 import Tracks from '../Tracks/Tracks'
 import Loading from '../Loading/Loading'
+import NavigationTracks from '../NavigationTracks/NavigationTracks'
 import './ShowDetails.scss'
 
 class ShowDetails extends Component {
@@ -47,13 +48,16 @@ class ShowDetails extends Component {
 
   render() {
     return (
-      <section className="show-details-container">
-        <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
-        <p style={{color: 'white'}}>{this.state.show.date}</p>
-        <section className="tracks-container">
-          {this.renderTracks()}
+      <>
+        <NavigationTracks/>
+        <section className="show-details-container">
+          <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
+          <p style={{color: 'white'}}>{this.state.show.date}</p>
+          <section className="tracks-container">
+            {this.renderTracks()}
+          </section>
         </section>
-      </section>
+      </>
     )
   }
 }

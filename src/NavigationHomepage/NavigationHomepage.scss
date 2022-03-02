@@ -1,24 +1,26 @@
-.navigation-container {
+.navigation-container-home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
 }
 
-.nav-link-container {
+.nav-link-container-home {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 23vw;
 }
 
-.nav-link-container > button {
+.nav-link-container-home > a {
   background-color: transparent;
   color: #FFF;
   font-family: inherit;
   font-size: 2vh;
   border: none;
   margin: 8%;
+  text-decoration: none;
 }
 
 .random-show-link {

@@ -1,4 +1,4 @@
-.navigation-container-shows {
+.navigation-container-tracks {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,15 +6,16 @@
   width: 100vw;
 }
 
-.nav-link-container-shows {
+.nav-link-container-tracks {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 22vw;
+  align-items: center;
+  width: 36vw;
 }
 
-.nav-link-container-shows > button,
-.nav-link-container-shows > a {
+.nav-link-container-tracks > button,
+.nav-link-container-tracks > a {
   background-color: transparent;
   color: #FFF;
   font-family: inherit;
@@ -22,12 +23,14 @@
   border: none;
   margin: 8%;
   text-decoration: none;
+  margin: 4%;
 }
 
-.random-show-link {
+.random-show-link,
+.back-to-shows-link {
   width: 20vw;
 }
 
-.navigation-container > button:hover {
+.navigation-container-tracks > button:hover {
   cursor: pointer;
 }
