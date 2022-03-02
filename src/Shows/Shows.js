@@ -18,7 +18,6 @@ class Shows extends Component {
   componentDidMount = () => {
     fetchYearData(this.props.year)
       .then(data => {
-        console.log(data)
         this.setState({
           shows: cleanDates(data.data),
           isLoading: false
