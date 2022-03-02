@@ -22,7 +22,6 @@ class ShowDetails extends Component {
           show: cleanDate(data.data),
           isLoading: false
         })
-        console.log(this.state.show)
       })
       .catch(error => console.log(error))
   }
