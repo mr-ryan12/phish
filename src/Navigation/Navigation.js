@@ -4,8 +4,8 @@ import './Navigation.scss'
 const Navigation = () => {
   return (
     <section className="navigation-container">
-      <p>Home</p>
-      <p>Random Show</p>
+      <button>Home</button>
+      <button>Random Show</button>
     </section>
   )
 }
