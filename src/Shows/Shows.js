@@ -9,7 +9,8 @@ class Shows extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      shows: []
+      shows: [],
+      isLoading: true
     }
   }
 
@@ -18,7 +19,8 @@ class Shows extends Component {
       .then(data => {
         console.log(data)
         this.setState({
-          shows: cleanDates(data.data)
+          shows: cleanDates(data.data),
+          isLoading: false
         })
       })
       .catch(error => console.log(error.message))
@@ -42,7 +44,7 @@ class Shows extends Component {
       <section className="main-shows-container">
         <h2 className="shows-page-heading">{this.props.year} Shows</h2>
         <section className="shows-container">
-          {allShows}
+          {this.state.isLoading ? <h2 style={{color: 'white'}}>loading...</h2>: allShows}
         </section>
       </section>
     )
