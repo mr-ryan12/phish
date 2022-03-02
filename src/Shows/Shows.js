@@ -3,6 +3,7 @@ import { fetchYearData } from '../apiCalls'
 import { cleanDates } from '../utils.js'
 import PropTypes from 'prop-types'
 import ShowsCard from '../ShowsCard/ShowsCard'
+import Loading from '../Loading/Loading'
 import './Shows.scss'
 
 class Shows extends Component {
@@ -44,7 +45,7 @@ class Shows extends Component {
       <section className="main-shows-container">
         <h2 className="shows-page-heading">{this.props.year} Shows</h2>
         <section className="shows-container">
-          {this.state.isLoading ? <h2 style={{color: 'white'}}>loading...</h2>: allShows}
+          {this.state.isLoading ? <Loading/> : allShows}
         </section>
       </section>
     )
