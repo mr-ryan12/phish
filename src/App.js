@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { fetchYears } from './apiCalls'
 import Years from './Years/Years'
+import Shows from './Shows/Shows'
 import './App.scss'
 
 class App extends Component {
@@ -19,7 +20,7 @@ class App extends Component {
           years: data.data
         })
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log(error.message))
   }
 
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
         <h1>PHISH</h1>
         <Switch>
           <Route exact path="/" render={() => <Years years={this.state.years}/>}/>
+          <Route exact path="/:year" render={({ match }) => <Shows year={match.params.year}/>}/>
         </Switch>
       </main>
     )
