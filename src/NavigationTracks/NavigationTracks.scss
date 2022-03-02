@@ -1,0 +1,36 @@
+.navigation-container-tracks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.nav-link-container-tracks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 36vw;
+}
+
+.nav-link-container-tracks > button,
+.nav-link-container-tracks > a {
+  background-color: transparent;
+  color: #FFF;
+  font-family: inherit;
+  font-size: 2vh;
+  border: none;
+  margin: 8%;
+  text-decoration: none;
+  margin: 4%;
+}
+
+.random-show-link-tracks,
+.back-to-shows-link {
+  width: 20vw;
+}
+
+.navigation-container-tracks > button:hover {
+  cursor: pointer;
+}

@@ -4,6 +4,7 @@ import { cleanDates } from '../utils.js'
 import PropTypes from 'prop-types'
 import ShowsCard from '../ShowsCard/ShowsCard'
 import Loading from '../Loading/Loading'
+import NavigationShows from '../NavigationShows/NavigationShows'
 import './Shows.scss'
 
 class Shows extends Component {
@@ -41,12 +42,15 @@ class Shows extends Component {
       )
     })
     return (
+      <>
+      <NavigationShows/>
       <section className="main-shows-container">
         <h2 className="shows-page-heading">{this.props.year} Shows</h2>
         <section className="shows-container">
           {this.state.isLoading ? <Loading/> : allShows}
         </section>
       </section>
+      </>
     )
   }
 }
