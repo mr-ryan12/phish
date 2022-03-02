@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { fetchYearData } from '../apiCalls'
+import { cleanDates } from '../utils.js'
 import PropTypes from 'prop-types'
 import ShowsCard from '../ShowsCard/ShowsCard'
 import './Shows.scss'
@@ -17,7 +18,7 @@ class Shows extends Component {
       .then(data => {
         console.log(data)
         this.setState({
-          shows: data.data
+          shows: cleanDates(data.data)
         })
       })
       .catch(error => console.log(error.message))
