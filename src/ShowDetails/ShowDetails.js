@@ -49,7 +49,7 @@ class ShowDetails extends Component {
   render() {
     return (
       <>
-        <NavigationTracks/>
+        <NavigationTracks year={this.props.showYear}/>
         <section className="show-details-container">
           <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
           <p style={{color: 'white'}}>{this.state.show.date}</p>
@@ -64,6 +64,7 @@ class ShowDetails extends Component {
 
 ShowDetails.propTypes = {
   showId: PropTypes.string.isRequired,
+  showYear: PropTypes.string.isRequired
 }
 
 export default ShowDetails

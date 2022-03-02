@@ -28,12 +28,11 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        {/* <h1>PHISH</h1> */}
-        {/* <NavigationHomepage/> */}
         <Switch>
           <Route exact path="/" render={() => <Years years={this.state.years}/>}/>
+          <Route exact path="/randomShow" render={() => <h2 style={{color: 'white'}}>yaddah yaddah</h2>}/>
           <Route exact path="/:year" render={({ match }) => <Shows year={match.params.year}/>}/>
-          <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id}/>}/>
+          <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year}/>}/>
         </Switch>
       </main>
     )

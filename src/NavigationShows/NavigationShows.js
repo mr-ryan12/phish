@@ -9,7 +9,7 @@ const NavigationShows = () => {
       <h1>PHISH</h1>
       <section className="nav-link-container-shows">
         <Link to="/">Home</Link>
-        <Link className="random-show-link">Random Show</Link>
+        <Link to="/randomShow" className="random-show-link">Random Show</Link>
       </section>
     </section>
   )
