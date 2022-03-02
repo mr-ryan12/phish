@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './NavigationShows.scss'
 
-// add a 'to=' attribute to Link
 const NavigationShows = () => {
   return (
     <section className="navigation-container-shows">
