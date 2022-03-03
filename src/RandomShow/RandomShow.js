@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { fetchRandomShow } from '../apiCalls'
+import { fetchData } from '../apiCalls'
 import { cleanDate } from '../utils'
 import NavigationRandomShow from '../NavigationRandomShow/NavigationRandomShow'
 import Loading from '../Loading/Loading'
@@ -17,7 +17,7 @@ class RandomShow extends Component {
   }
 
   componentDidMount = () => {
-    fetchRandomShow()
+    fetchData('random-show')
       .then(data => {
         this.setState({
           show: cleanDate(data.data),

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { fetchShowData, fetchYears } from '../apiCalls'
+import { fetchData } from '../apiCalls'
 import { cleanDate } from '../utils'
 import PropTypes from 'prop-types'
 import Tracks from '../Tracks/Tracks'
@@ -20,7 +20,7 @@ class ShowDetails extends Component {
   }
 
   componentDidMount = () => {
-    Promise.all([fetchYears(), fetchShowData(this.props.showId)])
+    Promise.all([fetchData('years.json?include_show_counts=true'), fetchData(`shows/${this.props.showId}.json`)])
       .then(data => {
         this.checkUrl(data[0].data, data[1].data)
       })
@@ -65,7 +65,7 @@ class ShowDetails extends Component {
   render() {
     return (
       <>
-       { this.state.error ? <ErrorComponent message="Something went wrong. It's okay. At least there's this to look at."/> : <><NavigationTracks year={this.props.showYear} isLoading={this.state.isLoading}/>
+       { this.state.error ? <ErrorComponent message="So sorry, that page is not found."/> : <><NavigationTracks year={this.props.showYear} isLoading={this.state.isLoading}/>
         <section className="show-details-container">
           <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
           <p style={{color: 'white'}}>{this.state.show.date}</p>

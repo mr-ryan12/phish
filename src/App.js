@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { fetchYears } from './apiCalls'
+// import { fetchYears } from './apiCalls'
+import { fetchData } from './apiCalls'
 import Years from './Years/Years'
 import Shows from './Shows/Shows'
 import ShowDetails from './ShowDetails/ShowDetails'
@@ -18,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetchYears()
+    fetchData('years.json?include_show_counts=true')
       .then(data => {
         this.setState({
           years: data.data

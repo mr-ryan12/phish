@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { fetchYearData } from '../apiCalls'
+import { fetchData } from '../apiCalls'
 import { cleanDates } from '../utils.js'
 import PropTypes from 'prop-types'
 import ShowsCard from '../ShowsCard/ShowsCard'
@@ -18,7 +18,7 @@ class Shows extends Component {
   }
 
   componentDidMount = () => {
-    fetchYearData(this.props.year)
+    fetchData(`years/${this.props.year}.json`)
       .then(data => {
         this.setState({
           shows: cleanDates(data.data),
@@ -52,14 +52,7 @@ class Shows extends Component {
     </section></>
     return (
       <>
-      {/* <NavigationShows isLoading={this.state.isLoading}/>
-      <section className="main-shows-container">
-        <h2 className="shows-page-heading">{this.props.year} Shows</h2>
-        <section className="shows-container">
-          {this.state.isLoading ? <Loading/> : allShows}
-        </section>
-      </section> */}
-      {this.state.error ? <h2 style={{color: 'white'}}>Something went wrong</h2> : shouldBeAComponent}
+        {this.state.error ? <h2 style={{color: 'white'}}>Something went wrong</h2> : shouldBeAComponent}
       </>
     )
   }
