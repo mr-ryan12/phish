@@ -20,8 +20,6 @@ const NavigationShows = props => {
     <section className="navigation-container-shows">
       <h1>PHISH</h1>
       <section className="nav-link-container-shows">
-        {/* <Link to="/">Home</Link>
-        <Link to="/randomShow" className="random-show-link">Random Show</Link> */}
         {checkButtons(props.isLoading)}
       </section>
     </section>
