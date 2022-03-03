@@ -12,7 +12,8 @@ class Shows extends Component {
     super(props)
     this.state = {
       shows: [],
-      isLoading: true
+      isLoading: true,
+      error: false
     }
   }
 
@@ -24,7 +25,7 @@ class Shows extends Component {
           isLoading: false
         })
       })
-      .catch(error => console.log(error.message))
+      .catch(() => this.setState({ error: true }))
   }
   
   render() {
@@ -41,15 +42,24 @@ class Shows extends Component {
         />
       )
     })
+
+    const shouldBeAComponent = <><NavigationShows isLoading={this.state.isLoading}/>
+    <section className="main-shows-container">
+      <h2 className="shows-page-heading">{this.props.year} Shows</h2>
+      <section className="shows-container">
+        {this.state.isLoading ? <Loading/> : allShows}
+      </section>
+    </section></>
     return (
       <>
-      <NavigationShows isLoading={this.state.isLoading}/>
+      {/* <NavigationShows isLoading={this.state.isLoading}/>
       <section className="main-shows-container">
         <h2 className="shows-page-heading">{this.props.year} Shows</h2>
         <section className="shows-container">
           {this.state.isLoading ? <Loading/> : allShows}
         </section>
-      </section>
+      </section> */}
+      {this.state.error ? <h2 style={{color: 'white'}}>Something went wrong</h2> : shouldBeAComponent}
       </>
     )
   }
