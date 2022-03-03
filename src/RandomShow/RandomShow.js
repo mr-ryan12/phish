@@ -18,7 +18,6 @@ class RandomShow extends Component {
   componentDidMount = () => {
     fetchRandomShow()
       .then(data => {
-        console.log(data.data)
         this.setState({
           show: cleanDate(data.data),
           isLoading: false
