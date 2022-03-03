@@ -3,8 +3,7 @@ import { fetchData } from '../apiCalls'
 import { cleanDates } from '../utils.js'
 import PropTypes from 'prop-types'
 import ShowsCard from '../ShowsCard/ShowsCard'
-import Loading from '../Loading/Loading'
-import NavigationShows from '../NavigationShows/NavigationShows'
+import ShowsDisplay from './ShowsDisplay'
 import './Shows.scss'
 
 class Shows extends Component {
@@ -43,16 +42,15 @@ class Shows extends Component {
       )
     })
 
-    const shouldBeAComponent = <><NavigationShows isLoading={this.state.isLoading}/>
-    <section className="main-shows-container">
-      <h2 className="shows-page-heading">{this.props.year} Shows</h2>
-      <section className="shows-container">
-        {this.state.isLoading ? <Loading/> : allShows}
-      </section>
-    </section></>
+    const componentForDisplay = this.state.error ? <h2 style={{color: 'white'}}>Something went wrong</h2>
+      : <ShowsDisplay
+          isLoading={this.state.isLoading}
+          year={this.props.year}
+          allShows={allShows}
+        />
     return (
       <>
-        {this.state.error ? <h2 style={{color: 'white'}}>Something went wrong</h2> : shouldBeAComponent}
+        {componentForDisplay}
       </>
     )
   }
