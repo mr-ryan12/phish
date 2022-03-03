@@ -4,7 +4,7 @@ import { fetchYears } from './apiCalls'
 import Years from './Years/Years'
 import Shows from './Shows/Shows'
 import ShowDetails from './ShowDetails/ShowDetails'
-import NavigationRandomShow from './NavigationRandomShow/NavigationRandomShow'
+import RandomShow from './RandomShow/RandomShow'
 import './App.scss'
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
       <main className="App">
         <Switch>
           <Route exact path="/" render={() => <Years years={this.state.years}/>}/>
-          <Route exact path="/randomShow" render={() => <NavigationRandomShow/>}/>
+          <Route exact path="/randomShow" render={() => <RandomShow/>}/>
           <Route exact path="/:year" render={({ match }) => <Shows year={match.params.year}/>}/>
           <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year}/>}/>
         </Switch>
