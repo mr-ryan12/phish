@@ -13,10 +13,10 @@ const checkButtons = loading => {
 const NavigationRandomShow = props => {
   return (
     <section className="navigation-container-random-show">
-    <h1>PHISH</h1>
-    <section className="nav-link-container-random-show">
-      {checkButtons(props.isLoading)}
-    </section>
+      <h1>PHISH</h1>
+      <section className="nav-link-container-random-show">
+        {checkButtons(props.isLoading)}
+      </section>
   </section>
   )
 }
