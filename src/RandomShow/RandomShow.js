@@ -11,7 +11,8 @@ class RandomShow extends Component {
     super()
     this.state = {
       show: '',
-      isLoading: true
+      isLoading: true,
+      error: false
     }
   }
 
@@ -23,7 +24,7 @@ class RandomShow extends Component {
           isLoading: false
         })
       })
-      .catch(error => console.log(error.message))
+      .catch(() => this.setState({ error: true }))
   }
 
   renderTracks = () => {
@@ -46,16 +47,17 @@ class RandomShow extends Component {
   }
 
   render() {
+    const shouldBeAComponent = <><NavigationRandomShow isLoading={this.state.isLoading} />
+    <section className="show-details-container">
+      <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
+      <p style={{color: 'white'}}>{this.state.show.date}</p>
+      <section className="tracks-container">
+        {this.renderTracks()}
+      </section>
+    </section></>
     return(
       <>
-        <NavigationRandomShow isLoading={this.state.isLoading} />
-        <section className="show-details-container">
-          <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
-          <p style={{color: 'white'}}>{this.state.show.date}</p>
-          <section className="tracks-container">
-            {this.renderTracks()}
-          </section>
-        </section>
+        {this.state.error ? <h2 style={{color: 'white'}}>Something went wrong.</h2> : shouldBeAComponent}
       </>
     )
   }
