@@ -4,6 +4,7 @@ import { cleanDate } from '../utils'
 import NavigationRandomShow from '../NavigationRandomShow/NavigationRandomShow'
 import Loading from '../Loading/Loading'
 import Tracks from '../Tracks/Tracks'
+import RandomShowDisplay from './RandomShowDisplay'
 import '../ShowDetails/ShowDetails.scss'
 
 class RandomShow extends Component {
@@ -47,17 +48,16 @@ class RandomShow extends Component {
   }
 
   render() {
-    const shouldBeAComponent = <><NavigationRandomShow isLoading={this.state.isLoading} />
-    <section className="show-details-container">
-      <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
-      <p style={{color: 'white'}}>{this.state.show.date}</p>
-      <section className="tracks-container">
-        {this.renderTracks()}
-      </section>
-    </section></>
+    const componentForDisplay = this.state.error ? <h2 style={{color: 'white'}}>Something went wrong.</h2>
+      : <RandomShowDisplay 
+          isLoading={this.state.isLoading}
+          venueName={this.state.show.venue_name}
+          date={this.state.show.date}
+          renderTracks={this.renderTracks}
+        />
     return(
       <>
-        {this.state.error ? <h2 style={{color: 'white'}}>Something went wrong.</h2> : shouldBeAComponent}
+        {componentForDisplay}
       </>
     )
   }
