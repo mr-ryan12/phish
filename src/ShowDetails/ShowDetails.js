@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { fetchShowData } from '../apiCalls'
+import { fetchShowData, fetchYears } from '../apiCalls'
 import { cleanDate } from '../utils'
 import PropTypes from 'prop-types'
 import Tracks from '../Tracks/Tracks'
@@ -14,20 +14,26 @@ class ShowDetails extends Component {
     this.state = {
       show: '',
       isLoading: true,
-      error: false
+      error: false,
+      years: []
     }
   }
 
   componentDidMount = () => {
-    fetchShowData(this.props.showId)
+    Promise.all([fetchYears(), fetchShowData(this.props.showId)])
       .then(data => {
-        this.setState({
-          show: cleanDate(data.data),
-          isLoading: false,
-          error: false
-        })
+        // this.setState({
+        //   show: cleanDate(data.data),
+        //   isLoading: false,
+        //   error: false
+        // })
+        // this.checkUrl(data)
+        // this.setState({
+        //   years: data[0]
+        // })
+        this.checkUrl(data[0].data, data[1].data)
       })
-      .catch(error => this.setState({error: true, isLoading: false}))
+      .catch(() => this.setState({error: true, isLoading: false}))
   }
 
   renderTracks = () => {
@@ -49,6 +55,21 @@ class ShowDetails extends Component {
     }
   }
 
+  checkUrl = (years, shows) => {
+    const yearInUrl = this.props.showYear
+    const allYears = years.map(year => year.date)
+
+    if (!allYears.includes(yearInUrl)) {
+      this.setState({error: true, isLoading: false})
+    } else {
+      this.setState({
+        show: cleanDate(shows),
+        isLoading: false,
+        error: false
+      })
+    }
+  }
+
   render() {
     return (
       <>
@@ -67,7 +88,8 @@ class ShowDetails extends Component {
 
 ShowDetails.propTypes = {
   showId: PropTypes.string.isRequired,
-  showYear: PropTypes.string.isRequired
+  showYear: PropTypes.string.isRequired,
+  allYears: PropTypes.array.isRequired
 }
 
 export default ShowDetails

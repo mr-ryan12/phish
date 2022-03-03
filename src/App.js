@@ -48,7 +48,7 @@ class App extends Component {
           <Route exact path="/randomShow" render={() => <RandomShow/>}/>
           {/* <Route exact path="/:year" render={({ match }) => <Shows year={match.params.year}/>}/> */}
           <Route exact path="/:year" render={({ match }) => this.checkYear(match.params.year)}/>
-          <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year}/>}/>
+          <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year} allYears={this.state.years}/>}/>
         </Switch>
       </main>
     )
