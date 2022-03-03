@@ -6,13 +6,15 @@ import Tracks from '../Tracks/Tracks'
 import Loading from '../Loading/Loading'
 import NavigationTracks from '../NavigationTracks/NavigationTracks'
 import './ShowDetails.scss'
+import ErrorComponent from '../ErrorComponent/ErrorComponent'
 
 class ShowDetails extends Component {
   constructor(props) {
     super(props)
     this.state = {
       show: '',
-      isLoading: true
+      isLoading: true,
+      error: false
     }
   }
 
@@ -21,10 +23,11 @@ class ShowDetails extends Component {
       .then(data => {
         this.setState({
           show: cleanDate(data.data),
-          isLoading: false
+          isLoading: false,
+          error: false
         })
       })
-      .catch(error => console.log(error))
+      .catch(error => this.setState({error: true, isLoading: false}))
   }
 
   renderTracks = () => {
@@ -49,14 +52,14 @@ class ShowDetails extends Component {
   render() {
     return (
       <>
-        <NavigationTracks year={this.props.showYear} isLoading={this.state.isLoading}/>
+       { this.state.error ? <ErrorComponent message="Something went wrong. It's okay. At least there's this to look at."/> : <><NavigationTracks year={this.props.showYear} isLoading={this.state.isLoading}/>
         <section className="show-details-container">
           <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
           <p style={{color: 'white'}}>{this.state.show.date}</p>
           <section className="tracks-container">
             {this.renderTracks()}
           </section>
-        </section>
+        </section></>}
       </>
     )
   }
