@@ -22,15 +22,6 @@ class ShowDetails extends Component {
   componentDidMount = () => {
     Promise.all([fetchYears(), fetchShowData(this.props.showId)])
       .then(data => {
-        // this.setState({
-        //   show: cleanDate(data.data),
-        //   isLoading: false,
-        //   error: false
-        // })
-        // this.checkUrl(data)
-        // this.setState({
-        //   years: data[0]
-        // })
         this.checkUrl(data[0].data, data[1].data)
       })
       .catch(() => this.setState({error: true, isLoading: false}))
@@ -58,8 +49,9 @@ class ShowDetails extends Component {
   checkUrl = (years, shows) => {
     const yearInUrl = this.props.showYear
     const allYears = years.map(year => year.date)
+    const isShowIdANumber = /^\d+$/.test(this.props.showId)
 
-    if (!allYears.includes(yearInUrl)) {
+    if (!allYears.includes(yearInUrl) || !isShowIdANumber) {
       this.setState({error: true, isLoading: false})
     } else {
       this.setState({
@@ -88,8 +80,7 @@ class ShowDetails extends Component {
 
 ShowDetails.propTypes = {
   showId: PropTypes.string.isRequired,
-  showYear: PropTypes.string.isRequired,
-  allYears: PropTypes.array.isRequired
+  showYear: PropTypes.string.isRequired
 }
 
 export default ShowDetails
