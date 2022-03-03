@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { fetchRandomShow } from '../apiCalls'
+import { fetchData } from '../apiCalls'
 import { cleanDate } from '../utils'
-import NavigationRandomShow from '../NavigationRandomShow/NavigationRandomShow'
 import Loading from '../Loading/Loading'
 import Tracks from '../Tracks/Tracks'
+import RandomShowDisplay from './RandomShowDisplay'
 import '../ShowDetails/ShowDetails.scss'
 
 class RandomShow extends Component {
@@ -11,19 +11,20 @@ class RandomShow extends Component {
     super()
     this.state = {
       show: '',
-      isLoading: true
+      isLoading: true,
+      error: false
     }
   }
 
   componentDidMount = () => {
-    fetchRandomShow()
+    fetchData('random-show')
       .then(data => {
         this.setState({
           show: cleanDate(data.data),
           isLoading: false
         })
       })
-      .catch(error => console.log(error.message))
+      .catch(() => this.setState({ error: true }))
   }
 
   renderTracks = () => {
@@ -46,16 +47,16 @@ class RandomShow extends Component {
   }
 
   render() {
+    const componentForDisplay = this.state.error ? <h2 style={{color: 'white'}}>So sorry, something went wrong.</h2>
+      : <RandomShowDisplay 
+          isLoading={this.state.isLoading}
+          venueName={this.state.show.venue_name}
+          date={this.state.show.date}
+          renderTracks={this.renderTracks}
+        />
     return(
       <>
-        <NavigationRandomShow isLoading={this.state.isLoading} />
-        <section className="show-details-container">
-          <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
-          <p style={{color: 'white'}}>{this.state.show.date}</p>
-          <section className="tracks-container">
-            {this.renderTracks()}
-          </section>
-        </section>
+        {componentForDisplay}
       </>
     )
   }

@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { fetchYearData } from '../apiCalls'
+import { fetchData } from '../apiCalls'
 import { cleanDates } from '../utils.js'
 import PropTypes from 'prop-types'
 import ShowsCard from '../ShowsCard/ShowsCard'
-import Loading from '../Loading/Loading'
-import NavigationShows from '../NavigationShows/NavigationShows'
+import ShowsDisplay from './ShowsDisplay'
 import './Shows.scss'
 
 class Shows extends Component {
@@ -12,19 +11,20 @@ class Shows extends Component {
     super(props)
     this.state = {
       shows: [],
-      isLoading: true
+      isLoading: true,
+      error: false
     }
   }
 
   componentDidMount = () => {
-    fetchYearData(this.props.year)
+    fetchData(`years/${this.props.year}.json`)
       .then(data => {
         this.setState({
           shows: cleanDates(data.data),
           isLoading: false
         })
       })
-      .catch(error => console.log(error.message))
+      .catch(() => this.setState({ error: true }))
   }
   
   render() {
@@ -41,15 +41,16 @@ class Shows extends Component {
         />
       )
     })
+
+    const componentForDisplay = this.state.error ? <h2 style={{color: 'white'}}>Something went wrong</h2>
+      : <ShowsDisplay
+          isLoading={this.state.isLoading}
+          year={this.props.year}
+          allShows={allShows}
+        />
     return (
       <>
-      <NavigationShows isLoading={this.state.isLoading}/>
-      <section className="main-shows-container">
-        <h2 className="shows-page-heading">{this.props.year} Shows</h2>
-        <section className="shows-container">
-          {this.state.isLoading ? <Loading/> : allShows}
-        </section>
-      </section>
+        {componentForDisplay}
       </>
     )
   }

@@ -1,30 +1,30 @@
 import React, { Component } from 'react'
-import { fetchShowData } from '../apiCalls'
+import { fetchData } from '../apiCalls'
 import { cleanDate } from '../utils'
 import PropTypes from 'prop-types'
 import Tracks from '../Tracks/Tracks'
 import Loading from '../Loading/Loading'
-import NavigationTracks from '../NavigationTracks/NavigationTracks'
+import ShowDetailsDisplay from './ShowDetailsDisplay'
 import './ShowDetails.scss'
+import ErrorComponent from '../ErrorComponent/ErrorComponent'
 
 class ShowDetails extends Component {
   constructor(props) {
     super(props)
     this.state = {
       show: '',
-      isLoading: true
+      isLoading: true,
+      error: false,
+      years: []
     }
   }
 
   componentDidMount = () => {
-    fetchShowData(this.props.showId)
+    Promise.all([fetchData('years.json?include_show_counts=true'), fetchData(`shows/${this.props.showId}.json`)])
       .then(data => {
-        this.setState({
-          show: cleanDate(data.data),
-          isLoading: false
-        })
+        this.checkUrl(data[0].data, data[1].data)
       })
-      .catch(error => console.log(error))
+      .catch(() => this.setState({error: true, isLoading: false}))
   }
 
   renderTracks = () => {
@@ -46,17 +46,34 @@ class ShowDetails extends Component {
     }
   }
 
+  checkUrl = (years, shows) => {
+    const yearInUrl = this.props.showYear
+    const allYears = years.map(year => year.date)
+    const isShowIdANumber = /^\d+$/.test(this.props.showId)
+
+    if (!allYears.includes(yearInUrl) || !isShowIdANumber) {
+      this.setState({error: true, isLoading: false})
+    } else {
+      this.setState({
+        show: cleanDate(shows),
+        isLoading: false,
+        error: false
+      })
+    }
+  }
+
   render() {
+    const componentForDisplay = this.state.error ? <ErrorComponent message="So sorry, that page is not found."/>
+      : <ShowDetailsDisplay
+          year={this.props.showYear}
+          isLoading={this.state.isLoading}
+          venueName={this.state.show.venue_name}
+          date={this.state.show.date}
+          renderTracks={this.renderTracks}
+        />
     return (
       <>
-        <NavigationTracks year={this.props.showYear} isLoading={this.state.isLoading}/>
-        <section className="show-details-container">
-          <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
-          <p style={{color: 'white'}}>{this.state.show.date}</p>
-          <section className="tracks-container">
-            {this.renderTracks()}
-          </section>
-        </section>
+        {componentForDisplay}
       </>
     )
   }
