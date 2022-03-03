@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import { fetchShowData } from '../apiCalls'
+import { fetchRandomShow } from '../apiCalls'
 import { cleanDate } from '../utils'
-import PropTypes from 'prop-types'
-import Tracks from '../Tracks/Tracks'
+import NavigationRandomShow from '../NavigationRandomShow/NavigationRandomShow'
 import Loading from '../Loading/Loading'
-import NavigationTracks from '../NavigationTracks/NavigationTracks'
-import './ShowDetails.scss'
+import Tracks from '../Tracks/Tracks'
+import '../ShowDetails/ShowDetails.scss'
 
-class ShowDetails extends Component {
-  constructor(props) {
-    super(props)
+class RandomShow extends Component {
+  constructor() {
+    super()
     this.state = {
       show: '',
       isLoading: true
@@ -17,14 +16,14 @@ class ShowDetails extends Component {
   }
 
   componentDidMount = () => {
-    fetchShowData(this.props.showId)
+    fetchRandomShow()
       .then(data => {
         this.setState({
           show: cleanDate(data.data),
           isLoading: false
         })
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log(error.message))
   }
 
   renderTracks = () => {
@@ -47,9 +46,9 @@ class ShowDetails extends Component {
   }
 
   render() {
-    return (
+    return(
       <>
-        <NavigationTracks year={this.props.showYear} isLoading={this.state.isLoading}/>
+        <NavigationRandomShow isLoading={this.state.isLoading} />
         <section className="show-details-container">
           <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
           <p style={{color: 'white'}}>{this.state.show.date}</p>
@@ -62,9 +61,4 @@ class ShowDetails extends Component {
   }
 }
 
-ShowDetails.propTypes = {
-  showId: PropTypes.string.isRequired,
-  showYear: PropTypes.string.isRequired
-}
-
-export default ShowDetails
+export default RandomShow

@@ -43,7 +43,7 @@ class Shows extends Component {
     })
     return (
       <>
-      <NavigationShows/>
+      <NavigationShows isLoading={this.state.isLoading}/>
       <section className="main-shows-container">
         <h2 className="shows-page-heading">{this.props.year} Shows</h2>
         <section className="shows-container">
