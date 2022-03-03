@@ -48,7 +48,7 @@ class RandomShow extends Component {
   render() {
     return(
       <>
-        <NavigationRandomShow />
+        <NavigationRandomShow isLoading={this.state.isLoading} />
         <section className="show-details-container">
           <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
           <p style={{color: 'white'}}>{this.state.show.date}</p>
@@ -59,10 +59,6 @@ class RandomShow extends Component {
       </>
     )
   }
-}
-
-RandomShow.propTypes = {
-
 }
 
 export default RandomShow
