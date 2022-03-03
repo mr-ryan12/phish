@@ -4,7 +4,6 @@ import { cleanDate } from '../utils'
 import PropTypes from 'prop-types'
 import Tracks from '../Tracks/Tracks'
 import Loading from '../Loading/Loading'
-import NavigationTracks from '../NavigationTracks/NavigationTracks'
 import ShowDetailsDisplay from './ShowDetailsDisplay'
 import './ShowDetails.scss'
 import ErrorComponent from '../ErrorComponent/ErrorComponent'
@@ -74,14 +73,6 @@ class ShowDetails extends Component {
         />
     return (
       <>
-       {/* { this.state.error ? <ErrorComponent message="So sorry, that page is not found."/> : <><NavigationTracks year={this.props.showYear} isLoading={this.state.isLoading}/>
-        <section className="show-details-container">
-          <h2 style={{color: 'white'}}>{this.state.show.venue_name}</h2>
-          <p style={{color: 'white'}}>{this.state.show.date}</p>
-          <section className="tracks-container">
-            {this.renderTracks()}
-          </section>
-        </section></>} */}
         {componentForDisplay}
       </>
     )
