@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-// import { fetchYears } from './apiCalls'
 import { fetchData } from './apiCalls'
 import Years from './Years/Years'
 import Shows from './Shows/Shows'
