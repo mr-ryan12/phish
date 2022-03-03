@@ -12,7 +12,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      years: []
+      years: [],
+      error: false
     }
   }
 
@@ -23,7 +24,7 @@ class App extends Component {
           years: data.data
         })
       })
-      .catch(error => console.log(error.message))
+      .catch(() => this.setState({ error: true }))
   }
 
   checkYear = year => {
@@ -36,15 +37,19 @@ class App extends Component {
     }
   }
 
-  checkId = id => {
-
+  checkFetch = years => {
+    if (this.state.error) {
+      return <h2 className="fetch-error-message">So sorry, something went wrong</h2>
+    } else {
+      return <Years years={years}/>
+    }
   }
 
   render() {
     return (
       <main className="App">
         <Switch>
-          <Route exact path="/" render={() => <Years years={this.state.years}/>}/>
+          <Route exact path="/" render={() => this.checkFetch(this.state.years)}/>
           <Route exact path="/randomShow" render={() => <RandomShow/>}/>
           <Route exact path="/:year" render={({ match }) => this.checkYear(match.params.year)}/>
           <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year}/>}/>
