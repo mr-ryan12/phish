@@ -1,0 +1,67 @@
+{
+  "success": true,
+  "total_entries": 1,
+  "total_pages": 1,
+  "page": 1,
+  "data": {
+      "id": 1015,
+      "date": "1999-10-09",
+      "duration": 9346090,
+      "incomplete": false,
+      "sbd": false,
+      "remastered": false,
+      "tags": [],
+      "tour_id": 41,
+      "venue": {
+          "id": 679,
+          "slug": "times-union-center",
+          "name": "Times Union Center",
+          "other_names": [],
+          "latitude": 42.648411,
+          "longitude": -73.754589,
+          "shows_count": 13,
+          "location": "Albany, NY",
+          "updated_at": "2013-03-23T02:15:24Z"
+      },
+      "venue_name": "Times Union Center",
+      "taper_notes": "Phish\r\nOctober 9, 1999\r\nPepsi Arena\r\nAlbany, NY\r\n\r\nsource:\r\nSchoeps mk41 > kc5 > cmc6 > Lunatec V2 > Apogee AD-1000 > DA-P1 (@44.1kHz)\r\n\r\ntransfer:\r\nSony D8 > M-Audio MicroTrack > CF Card > WaveLab 5.01b (fades) > CD Wave v1.94.5 > FLAC (level 8)\r\n\r\nrecorded by Dave Flaschner\r\ntransferred by Jason Sobel (jasonsobel@gmail.com)\r\nseeded 10/26/05\r\n\r\nDisc 1 - [73:17]\r\nSet I\r\n01 - [09:21] - Punch You in the Eye >\r\n02 - [06:50] - Wilson\r\n03 - [10:53] - Guyute\r\n04 - [23:01] - Ghost -> My Left Toe ->\r\n05 - [09:52] - Free\r\n06 - [03:57] - Sparkle >\r\n07 - [09:22] - Possum\r\n\r\nDisc 2 - [54:05]\r\nSet II\r\n01 - [14:02] - Limb By Limb >\r\n02 - [20:28] - 2001 >\r\n03 - [10:38] - Down with Disease >\r\n04 - [08:57] - Wading in a Velvet Sea\r\n\r\nDisc 3 - [32:02]\r\nSet II continued\r\n05 - [09:30] - Simple\r\n06 - [06:59] - Loving Cup\r\n07 - [03:39] - encore break\r\n08 - [11:54] - Slave to the Traffic Light\r\n\r\nShow Notes: Part of the Also Sprach jam featured Trey on keys.",
+      "likes_count": 26,
+      "tracks": [
+          {
+              "id": 20003,
+              "show_id": 1015,
+              "show_date": "1999-10-09",
+              "venue_name": "Times Union Center",
+              "venue_location": "Albany, NY",
+              "title": "Slave to the Traffic Light",
+              "position": 14,
+              "duration": 713639,
+              "jam_starts_at_second": null,
+              "set": "E",
+              "set_name": "Encore",
+              "likes_count": 5,
+              "slug": "slave-to-the-traffic-light",
+              "tags": [
+                  {
+                      "id": 4,
+                      "name": "Jamcharts",
+                      "priority": 4,
+                      "group": "Curated Selections",
+                      "color": "#888888",
+                      "notes": "According to an unconfirmed story, Phish played this emotional encore to honor a fan tragically killed in a car accident on the way to the show. There are powerful moments prior to the jam and a somber sentiment at the beginning, which miraculously transforms to an uplifting, joyful celebration by the end. A truly gracious and heartfelt version whether or not the story is true.",
+                      "transcript": null,
+                      "starts_at_second": null,
+                      "ends_at_second": null
+                  }
+              ],
+              "mp3": "https://phish.in/audio/000/020/003/20003.mp3",
+              "waveform_image": "https://phish.in/audio/000/020/003/20003.png",
+              "song_ids": [
+                  693
+              ],
+              "updated_at": "2021-05-15T11:21:29Z"
+          }
+      ],
+      "updated_at": "2018-12-21T08:10:24Z"
+  }
+}

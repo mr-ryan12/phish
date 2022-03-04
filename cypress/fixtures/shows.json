@@ -1,0 +1,129 @@
+{
+  "data": [
+    {
+        "id": 1324,
+        "date": "1983-12-02",
+        "duration": 1031524,
+        "incomplete": true,
+        "sbd": true,
+        "remastered": false,
+        "tags": [
+            {
+                "id": 1,
+                "name": "SBD",
+                "priority": 1,
+                "group": "Audio",
+                "color": "#888888",
+                "notes": null
+            }
+        ],
+        "tour_id": 1,
+        "venue": {
+            "id": 306,
+            "slug": "harris-millis-cafeteria-university-of-vermont",
+            "name": "Harris-Millis Cafeteria, University of Vermont",
+            "other_names": [],
+            "latitude": 44.472256,
+            "longitude": -73.193371,
+            "shows_count": 1,
+            "location": "Burlington, VT",
+            "updated_at": "2013-03-24T03:18:20Z"
+        },
+        "venue_name": "Harris-Millis Cafeteria, University of Vermont",
+        "taper_notes": "Phish\r\nHarris-Millis Cafeteria\r\nUniversity Of Vermont\r\nBurlington VT\r\n12/2/83 (portion)\r\n\r\nSource: FM > ?? > CDR > EAC > FLAC\r\nThanks to: Geoff Ecker for the source disc.\r\n\r\nSet II\r\n\r\n1. Scarlet Begonias [9:18] >\r\n2. Fire On The Mountain [7:52]\r\n\r\n\r\nNotes: This is a portion of the first Phish gig that was broadcast on\r\n       \"The Bunny\" Coventry radio broadcast.",
+        "likes_count": 26,
+        "tracks": [
+            {
+                "id": 26152,
+                "show_id": 1324,
+                "show_date": "1983-12-02",
+                "venue_name": "Harris-Millis Cafeteria, University of Vermont",
+                "venue_location": "Burlington, VT",
+                "title": "Scarlet Begonias",
+                "position": 1,
+                "duration": 558420,
+                "jam_starts_at_second": null,
+                "set": "2",
+                "set_name": "Set 2",
+                "likes_count": 10,
+                "slug": "scarlet-begonias",
+                "tags": [
+                    {
+                        "id": 1,
+                        "name": "SBD",
+                        "priority": 1,
+                        "group": "Audio",
+                        "color": "#888888",
+                        "notes": null,
+                        "transcript": null,
+                        "starts_at_second": null,
+                        "ends_at_second": null
+                    },
+                    {
+                        "id": 8,
+                        "name": "Debut",
+                        "priority": 7,
+                        "group": "Song Content",
+                        "color": "#888888",
+                        "notes": null,
+                        "transcript": null,
+                        "starts_at_second": null,
+                        "ends_at_second": null
+                    }
+                ],
+                "mp3": "https://phish.in/audio/000/026/152/26152.mp3",
+                "waveform_image": "https://phish.in/audio/000/026/152/26152.png",
+                "song_ids": [
+                    665
+                ],
+                "updated_at": "2021-05-14T04:13:56Z"
+            },
+            {
+                "id": 26153,
+                "show_id": 1324,
+                "show_date": "1983-12-02",
+                "venue_name": "Harris-Millis Cafeteria, University of Vermont",
+                "venue_location": "Burlington, VT",
+                "title": "Fire on the Mountain",
+                "position": 2,
+                "duration": 473104,
+                "jam_starts_at_second": null,
+                "set": "2",
+                "set_name": "Set 2",
+                "likes_count": 10,
+                "slug": "fire-on-the-mountain",
+                "tags": [
+                    {
+                        "id": 1,
+                        "name": "SBD",
+                        "priority": 1,
+                        "group": "Audio",
+                        "color": "#888888",
+                        "notes": null,
+                        "transcript": null,
+                        "starts_at_second": null,
+                        "ends_at_second": null
+                    },
+                    {
+                        "id": 8,
+                        "name": "Debut",
+                        "priority": 7,
+                        "group": "Song Content",
+                        "color": "#888888",
+                        "notes": null,
+                        "transcript": null,
+                        "starts_at_second": null,
+                        "ends_at_second": null
+                    }
+                ],
+                "mp3": "https://phish.in/audio/000/026/153/26153.mp3",
+                "waveform_image": "https://phish.in/audio/000/026/153/26153.png",
+                "song_ids": [
+                    253
+                ],
+                "updated_at": "2021-05-14T04:13:33Z"
+            }
+        ],
+        "updated_at": "2018-12-21T08:10:28Z"
+    }
+]}

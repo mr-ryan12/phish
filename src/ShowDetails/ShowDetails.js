@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { fetchData } from '../apiCalls'
-import { cleanDate } from '../utils'
+import { cleanDate, cleanTrackNames } from '../utils'
 import PropTypes from 'prop-types'
 import Tracks from '../Tracks/Tracks'
 import Loading from '../Loading/Loading'
@@ -46,7 +46,7 @@ class ShowDetails extends Component {
     }
   }
 
-  checkUrl = (years, shows) => {
+  checkUrl = (years, show) => {
     const yearInUrl = this.props.showYear
     const allYears = years.map(year => year.date)
     const isShowIdANumber = /^\d+$/.test(this.props.showId)
@@ -55,7 +55,7 @@ class ShowDetails extends Component {
       this.setState({error: true, isLoading: false})
     } else {
       this.setState({
-        show: cleanDate(shows),
+        show: cleanTrackNames(show),
         isLoading: false,
         error: false
       })

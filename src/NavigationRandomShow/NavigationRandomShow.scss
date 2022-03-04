@@ -13,7 +13,8 @@
   width: 22vw;
 }
 
-.nav-link-container-random-show > a {
+.nav-link-container-random-show > a,
+.nav-link-container-random-show > button {
   background-color: transparent;
   color: #FFF;
   font-family: inherit;
@@ -27,6 +28,6 @@
   width: 20vw;
 }
 
-.navigation-container > button:hover {
+.nav-link-container-random-show > button:hover {
   cursor: pointer;
 }
