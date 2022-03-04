@@ -19,4 +19,13 @@ const cleanDate = show => {
   return show
 }
 
-export { cleanDate, cleanDates }
+const cleanTrackNames = show => {
+  show.tracks.map(track => {
+    if (track.title.includes('Funky')) {
+      track.title = 'Funky'
+    }
+  })
+  return cleanDate(show)
+}
+
+export { cleanDate, cleanDates, cleanTrackNames }
