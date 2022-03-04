@@ -37,4 +37,36 @@ describe('Shows Page User Flow', () => {
       .should('exist')
       .should('have.text', '1983-1987 Shows')
   });
+
+  it('Should have a show card', () => {
+    cy.get('.show-card')
+      .should('have.length', 1)
+  });
+
+  it('Should have a name of the venue', () => {
+    cy.get('.show-card-venue-name')
+      .should('have.text', 'Harris-Millis Cafeteria, University of Vermont')
+  });
+
+  it('Should have a date of the show', () => {
+    cy.get('.show-card-date')
+      .should('have.text', '12-02-1983')
+  });
+
+  it('Should have a show location', () => {
+    cy.get('.show-card-location')
+      .should('have.text', 'Burlington, VT')
+  });
+
+  it('Should ahve a number of tracks', () => {
+    cy.get('.show-card-number-of-tracks')
+      .should('have.text', 'Number of Tracks: 2')
+  });
+
+  it('Should be able to click on the show card', () => {
+    cy.get('.show-card')
+      .click()
+      .url()
+      .should('eq', 'http://localhost:3000/1983-1987/1324')
+  });
 });

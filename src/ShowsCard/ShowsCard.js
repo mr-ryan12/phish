@@ -6,10 +6,10 @@ import './ShowsCard.scss'
 const ShowsCard = props => {
   return (
     <Link to={`/${props.year}/${props.id}`} className="show-card">
-      <h2>{props.venueName}</h2>
-      <p>{props.date}</p>
-      <p>{props.location}</p>
-      <p>Number of Tracks: {props.numOfTracks}</p>
+      <h2 className="show-card-venue-name">{props.venueName}</h2>
+      <p className="show-card-date">{props.date}</p>
+      <p className="show-card-location">{props.location}</p>
+      <p className="show-card-number-of-tracks">Number of Tracks: {props.numOfTracks}</p>
     </Link>
   )
 }
