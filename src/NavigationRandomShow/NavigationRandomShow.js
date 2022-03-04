@@ -5,7 +5,12 @@ import './NavigationRandomShow.scss'
 
 const checkButtons = loading => {
   if (!loading) {
-    return <Link to="/">Home</Link>
+    return (
+      <>
+        <Link to="/">Home</Link>
+        <Link to="/randomShow" onClick={() => window.location.reload()}>Get Another Random Show</Link>
+      </>
+      )
   }
   return null
 }
