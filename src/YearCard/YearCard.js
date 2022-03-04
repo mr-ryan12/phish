@@ -7,9 +7,9 @@ import './YearCard.scss'
 const YearCard = props => {
   return (
     <Link to={`/${props.date}`} className="year-card">
-      <img src={phishLogo} alt="circular-phish-logo"/>
-      <h2>{props.date}</h2>
-      <p>Total Shows: {props.show_count}</p>
+      <img src={phishLogo} alt="circular-phish-logo" className="year-card-logo"/>
+      <h2 className="year-card-date">{props.date}</h2>
+      <p className="year-card-total-shows">Total Shows: {props.show_count}</p>
     </Link>
   )
 }

@@ -21,4 +21,42 @@ describe('Main Page User Flow', () => {
       .first()
       .should('have.text', 'PHISH')
   })
+
+  it('Should have a "Random Image" link', () => {
+    cy.get('a')
+      .first()
+      .should('exist')
+      .should('have.text', 'Random Show')
+  })
+
+  it('Should have year cards', () => {
+    cy.get('.year-card')
+      .should('have.length', 3)
+  })
+
+  it('Should have a logo in the year card', () => {
+    cy.get('.year-card-logo')
+      .first()
+      .should('exist')
+  })
+
+  it('Should have a year displayed in the card', () => {
+    cy.get('.year-card-date')
+      .first()
+      .should('exist')
+      .should('have.text', '1983-1987')
+  })
+
+  it('Should display the total number of shows on the year card', () => {
+    cy.get('.year-card-total-shows')
+      .first()
+      .should('have.text', 'Total Shows: 34')
+  })
+
+  it('Should have a clickable link to a random show', () => {
+    cy.get('.random-show-link-home')
+      .click()
+      .url()
+      .should('eq', 'http://localhost:3000/randomShow')
+  })
 })
