@@ -8,7 +8,7 @@ const checkButtons = loading => {
     return (
       <>
         <Link to="/">Home</Link>
-        <button onClick={() => window.location.reload()}>Get Another Random Show</button>
+        <button onClick={() => window.location.reload()} className="get-another-random-show-link">Get Another Random Show</button>
       </>
       )
   }
