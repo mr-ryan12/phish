@@ -10,3 +10,13 @@
 .year-card > img {
   width: 100%;
 }
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .year-card {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: center;
+    width: 50%;
+  }
+}
