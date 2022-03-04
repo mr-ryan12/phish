@@ -3,8 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // width: 98vw;
-  width: 100%;
+  width: 100vw;
 }
 
 .nav-link-container-tracks {
@@ -37,4 +36,14 @@
 
 .navigation-container-tracks > button:hover {
   cursor: pointer;
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .navigation-container-tracks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 109%;
+  }
 }
