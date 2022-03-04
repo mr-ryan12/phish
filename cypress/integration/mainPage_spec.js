@@ -53,6 +53,14 @@ describe('Main Page User Flow', () => {
       .should('have.text', 'Total Shows: 34')
   });
 
+  it('Should be able to click a year card', () => {
+    cy.get('.year-card')
+      .first()
+      .click()
+      .url()
+      .should('eq', "http://localhost:3000/1983-1987")
+  })
+
   it('Should have a clickable link to a random show', () => {
     cy.get('.random-show-link-home')
       .click()
