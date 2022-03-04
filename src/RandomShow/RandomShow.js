@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { fetchData } from '../apiCalls'
-import { cleanDate } from '../utils'
+import { cleanTrackNames } from '../utils'
 import Loading from '../Loading/Loading'
 import Tracks from '../Tracks/Tracks'
 import RandomShowDisplay from './RandomShowDisplay'
@@ -20,7 +20,7 @@ class RandomShow extends Component {
     fetchData('random-show')
       .then(data => {
         this.setState({
-          show: cleanDate(data.data),
+          show: cleanTrackNames(data.data),
           isLoading: false
         })
       })
