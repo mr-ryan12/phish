@@ -7,7 +7,7 @@ const ErrorComponent = props => {
   return (
     <section className="error-container">
       <h2 className="error-message">{props.message}</h2>
-      <Link to="/">Home</Link>
+      <Link to="/" className="error-message-home-link">Home</Link>
     </section>
   )
 }
