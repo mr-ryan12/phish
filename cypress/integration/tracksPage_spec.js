@@ -58,7 +58,7 @@ describe('Tracks Page User Flow', () => {
       .should('have.text', 'Scarlet Begonias')
   });
 
-  it('Should have audio on the track card', () => {
+  it('Should have audio controls on the track card', () => {
     cy.get('.track-card-audio')
       .should('have.attr', 'controls')
   });
@@ -99,6 +99,43 @@ describe('Tracks Page User Flow - Failed Fetch', () => {
 
   it('Should be able to go back home', () => {
     cy.get('.error-message-home-link')
+      .click()
+      .url()
+      .should('eq', 'http://localhost:3000/')
+  });
+});
+
+describe('Tracks Page User Flow - Incorrect URL Entry', () => {
+  beforeEach(() => {
+    cy.intercept({
+      method: 'GET',
+      url: 'https://phish.in/api/v1/shows/1324.json',
+      headers: {
+        'Accept': 'application/json', 
+        'Authorization': 'Bearer a2079c6b7e26152391f7dca8b63851357fa5d24e23ce7a263fd37bece859dd215d1e1fd8effedda6ca91bcff64e2f797'
+      }
+    })
+    cy.visit('http://localhost:3000/1983-1987/1324asdf')
+  });
+
+  it('Should have an error message', () => {
+    cy.get('h2')
+      .should('have.text', 'So sorry, that page is not found.')
+  });
+
+  it('Should have a home link', () => {
+    cy.get('a')
+      .should('exist')
+      .should('have.text', 'Home')
+  });
+
+  it('Should not display any tracks', () => {
+    cy.get('.track-card')
+      .should('not.exist')
+  });
+
+  it('Should be able to go back home', () => {
+    cy.get('a')
       .click()
       .url()
       .should('eq', 'http://localhost:3000/')
