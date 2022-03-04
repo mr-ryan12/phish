@@ -35,13 +35,13 @@
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .navigation-container-shows {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 109%;
   }
 
   .nav-link-container-shows {
-    margin-left: 9%;
+    margin-left: 2%;
   }
 }
