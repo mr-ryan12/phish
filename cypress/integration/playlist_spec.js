@@ -40,7 +40,7 @@ describe('Playlist User Flow', () => {
       .should('have.text', 'No tracks yet! Please add some!')
   });
 
-  it.only('Should be able to add tracks to playlist', () => {
+  it('Should be able to add tracks to playlist', () => {
     cy.visit('http://localhost:3000')
       .get('.year-card')
       .first()
@@ -63,5 +63,37 @@ describe('Playlist User Flow', () => {
       .should('exist')
       .should('have.length', 1)
       .contains('Scarlet Begonias')
+  });
+
+  it('Should be able to remove tracks from playlist', () => {
+    cy.visit('http://localhost:3000')
+    .get('.year-card')
+    .first()
+    .click()
+    .url()
+    .should('eq', 'http://localhost:3000/1983-1987')
+    .get('.show-card')
+    .first()
+    .click()
+    .url()
+    .should('eq', 'http://localhost:3000/1983-1987/1324')
+    .get('.add-to-playlist-button')
+    .first()
+    .click()
+    .get('[data-cy=playlist-link]')
+    .click()
+    .url()
+    .should('eq', 'http://localhost:3000/playlist')
+    .get('.playlist-card')
+    .should('exist')
+    .should('have.length', 1)
+    .contains('Scarlet Begonias')
+    .get('.remove-from-playlist-button')
+    .click()
+    .get('.playlist-card')
+    .should('not.exist')
+    .get('.empty-playlist-message')
+    .should('exist')
+    .should('have.text', 'No tracks yet! Please add some!')
   });
 });
