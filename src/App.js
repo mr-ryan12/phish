@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { fetchData } from './apiCalls'
-import { cleanTrackName } from './utils'
+import { cleanTrackData } from './utils'
 import Years from './Years/Years'
 import Shows from './Shows/Shows'
 import ShowDetails from './ShowDetails/ShowDetails'
@@ -54,7 +54,7 @@ class App extends Component {
       .then(data => {
         this.setState({
           playlistIds: [...this.state.playlistIds, data.data.id],
-          playlist: [...this.state.playlist, cleanTrackName(data.data)]
+          playlist: [...this.state.playlist, cleanTrackData(data.data)]
         })
       })
       .catch(error => this.setState({error: true}))

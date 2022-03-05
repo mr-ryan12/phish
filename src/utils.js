@@ -28,7 +28,10 @@ const cleanTrackNames = show => {
   return cleanDate(show)
 }
 
-const cleanTrackName = track => {
+const cleanTrackData = track => {
+  const [year, month, day] = track.show_date.split('-')
+  track.show_date = [month, day, year].join('-')
+
   if (track.title.includes('Funky')) {
     track.title = 'Funky'
   }
@@ -36,4 +39,4 @@ const cleanTrackName = track => {
   return track
 }
 
-export { cleanDate, cleanDates, cleanTrackNames, cleanTrackName }
+export { cleanDate, cleanDates, cleanTrackNames, cleanTrackData }
