@@ -56,7 +56,6 @@ class App extends Component {
           playlistIds: [...this.state.playlistIds, data.data.id],
           playlist: [...this.state.playlist, cleanTrackName(data.data)]
         })
-        console.log(this.state.playlist)
       })
       .catch(error => this.setState({error: true}))
   }
