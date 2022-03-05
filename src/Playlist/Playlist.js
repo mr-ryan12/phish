@@ -20,12 +20,12 @@ const Playlist = props => {
   })
   return (
     <>
-    <NavigationPlaylist/>
-      <h2 className="playlist-header">Playlist</h2>
-      {allPlaylistTracks.length === 0 && <p className="empty-playlist-message">No tracks yet! Please add some!</p>}
-      <section className="playlist-container">
-        {allPlaylistTracks.length !== 0 ? allPlaylistTracks : null}
-      </section>
+      <NavigationPlaylist/>
+        <h2 className="playlist-header">Playlist</h2>
+        {allPlaylistTracks.length === 0 && <p className="empty-playlist-message">No tracks yet! Please add some!</p>}
+        <section className="playlist-container">
+          {allPlaylistTracks.length !== 0 ? allPlaylistTracks : null}
+        </section>
     </>
   )
 }
