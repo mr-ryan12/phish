@@ -1,0 +1,31 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.playlist-header {
+  color: $mainTextColor;
+}
+
+.playlist-container {
+  @include display-grid();
+}
+
+.empty-playlist-message {
+  color: $mainTextColor;
+  align-self: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .playlist-header {
+    margin-left: 7%;
+  }
+
+  .empty-playlist-message {
+    margin-left: 7%;
+  }
+  
+  .playlist-container {
+    @include display-flex(column, flex-start, center);
+    width: 100%;
+  }
+}

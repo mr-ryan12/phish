@@ -9,6 +9,7 @@ const checkButtons = loading => {
       <>
         <Link to="/">Home</Link>
         <Link to="/randomShow" className="random-show-link">Random Show</Link>
+        <Link to="/playlist" className="random-show-link">Playlist</Link>
       </>
     )
   }

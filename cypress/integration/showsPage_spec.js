@@ -29,6 +29,7 @@ describe('Shows Page User Flow', () => {
 
   it('Should have a Random Show link', () => {
     cy.get('.random-show-link')
+      .first()
       .should('have.text', 'Random Show')
   });
 

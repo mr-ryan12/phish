@@ -27,9 +27,10 @@ describe('Random Show User Flow', () => {
       .should('have.text', 'Home')
   });
 
-  it('Should have "Get Another Random Show" link', () => {
-    cy.get('.get-another-random-show-link')
-      .should('exist')
+  it('Should have a playlist link', () => {
+    cy.get('a')
+      .eq(1)
+      .should('have.text', 'Playlist')
   });
 
   it('Should have a subheader with show title', () => {

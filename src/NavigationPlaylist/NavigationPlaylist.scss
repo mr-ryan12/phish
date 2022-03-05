@@ -1,0 +1,38 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.navigation-container-playlist {
+  @include display-flex(column, center, center);
+  width: 100%;
+}
+
+.nav-link-container-playlist {
+  @include display-flex(row, center, normal);
+  width: 23vw;
+}
+
+.nav-link-container-playlist > a {
+  color: $mainTextColor;
+  font-family: inherit;
+  font-size: 2vh;
+  border: none;
+  margin: 8%;
+  text-decoration: none;
+}
+
+.playlist-link-home {
+  width: 10vw;
+  background: none;
+  @include hover-transform();
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .navigation-container-playlist {
+    @include display-flex(column, center, center);
+    width: 109%;
+  }
+
+  .playlist-link-home {
+    width: 20vw;
+  }
+}

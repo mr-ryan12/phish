@@ -32,10 +32,17 @@ describe('Tracks Page User Flow', () => {
       .should('have.text', 'Back to 1983-1987 Shows')
   });
 
-  it('Should have a Random Show link', () => {
+  it('Should have a random show link', () => {
     cy.get('.random-show-link-tracks')
+      .first()
       .should('have.text', 'Random Show')
   });
+
+  it('Should have a playlist link', () => {
+    cy.get('a')
+      .eq(3)
+      .should('have.text', 'Playlist')
+  })
 
   it('Should have a subheading', () => {
     cy.get('.tracks-page-venue-name')
