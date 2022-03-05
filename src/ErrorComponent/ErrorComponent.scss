@@ -1,5 +1,7 @@
+@import '../styles/variables';
+
 .error-container {
-  color: #FFF;
+  color: $mainTextColor;
 }
 
 .error-container > h2 {
@@ -8,6 +10,6 @@
 
 .error-container > a {
   text-decoration: none;
-  color: #FFF;
+  color: $mainTextColor;
   font-size: 2.5vh;
 }

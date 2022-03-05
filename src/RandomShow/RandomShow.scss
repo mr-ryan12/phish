@@ -1,6 +1,8 @@
+@import '../styles/variables';
+
 .random-show-venue-name,
 .random-show-date {
-  color: #FFF;
+  color: $mainTextColor;
 }
 
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {

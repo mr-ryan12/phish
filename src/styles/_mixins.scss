@@ -1,0 +1,30 @@
+@mixin display-flex($flexDirection, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin hover-transform() {
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition-duration: .15s;
+    box-shadow: 5px 5px 25px gold;
+  }
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition-duration: .15s;
+    box-shadow: 5px 5px 25px gold;
+  }
+}
+
+@mixin display-grid() {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 19px;
+  width: 96vw;
+  margin: 0;
+}

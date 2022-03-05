@@ -1,7 +1,8 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
 .show-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include display-flex(column, space-between, normal);
   background-color: #f6f5f6;
   border: 5px solid black;
   text-decoration: none;
@@ -9,13 +10,12 @@
   font-size: 2vh;
   padding: 10px;
   width: 21.8vw;
+  @include hover-transform();
 }
 
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .show-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include display-flex(column, space-between, normal);
     background-color: #f6f5f6;
     border: 5px solid black;
     text-decoration: none;

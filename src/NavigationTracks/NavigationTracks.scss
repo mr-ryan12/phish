@@ -1,28 +1,26 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
 .navigation-container-tracks {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include display-flex(column, center, center);
   width: 100vw;
 }
 
 .nav-link-container-tracks {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  @include display-flex(row, center, center);
   width: 43vw;
   margin-left: 5%;
 }
 
 .nav-link-container-tracks > a {
   background-color: transparent;
-  color: #FFF;
+  color: $mainTextColor;
   font-family: inherit;
   font-size: 2vh;
   border: none;
   margin: 8%;
   text-decoration: none;
+  @include hover-transform();
 }
 
 .random-show-link-tracks,
@@ -34,16 +32,9 @@
   margin-left: 0;
 }
 
-.navigation-container-tracks > button:hover {
-  cursor: pointer;
-}
-
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .navigation-container-tracks {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include display-flex(column, center, center);
     width: 109%;
   }
 }

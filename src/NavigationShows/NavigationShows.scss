@@ -1,43 +1,35 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
 .navigation-container-shows {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include display-flex(column, center, center);
   width: 100%;
 }
 
 .nav-link-container-shows {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include display-flex(row, center, normal);
   width: 22vw;
 }
 
 .nav-link-container-shows > button,
 .nav-link-container-shows > a {
   background-color: transparent;
-  color: #FFF;
+  color: $mainTextColor;
   font-family: inherit;
   font-size: 2vh;
   border: none;
   margin: 8%;
   text-decoration: none;
+  @include hover-transform();
 }
 
 .random-show-link {
   width: 20vw;
 }
 
-.navigation-container > button:hover {
-  cursor: pointer;
-}
-
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .navigation-container-shows {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include display-flex(column, center, center);
     width: 109%;
   }
 

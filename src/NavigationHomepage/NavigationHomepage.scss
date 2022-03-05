@@ -1,21 +1,18 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
 .navigation-container-home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include display-flex(column, center, center);
   width: 100%;
 }
 
 .nav-link-container-home {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include display-flex(row, center, normal);
   width: 23vw;
 }
 
 .nav-link-container-home > a {
-  background-color: transparent;
-  color: #FFF;
+  color: $mainTextColor;
   font-family: inherit;
   font-size: 2vh;
   border: none;
@@ -26,30 +23,12 @@
 .random-show-link-home {
   width: 10vw;
   background: none;
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.03);
-    transition-duration: .15s;
-    box-shadow: 5px 5px 25px gold;
-  }
-  &:focus {
-    cursor: pointer;
-    transform: scale(1.03);
-    transition-duration: .15s;
-    box-shadow: 5px 5px 25px gold;
-  }
-}
-
-.navigation-container > button:hover {
-  cursor: pointer;
+  @include hover-transform();
 }
 
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .navigation-container-home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include display-flex(column, center, center);
     width: 109%;
   }
 
