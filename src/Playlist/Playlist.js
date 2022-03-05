@@ -12,6 +12,8 @@ const Playlist = props => {
         id={track.id}
         title={track.title}
         mp3={track.mp3}
+        date={track.show_date}
+        location={track.venue_location}
       />
     )
   })
