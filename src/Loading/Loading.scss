@@ -2,7 +2,7 @@
 @import '../styles/mixins';
 
 .loading-container {
-  @include display-flex(none, center, center);
+  @include display-flex(row, center, center);
   width: 98vw;
 }
 
