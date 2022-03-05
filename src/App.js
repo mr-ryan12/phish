@@ -15,6 +15,7 @@ class App extends Component {
     this.state = {
       years: [],
       playlist: [],
+      playlistIds: [],
       error: false
     }
   }
@@ -51,6 +52,7 @@ class App extends Component {
     fetchData(`tracks/${id}`)
       .then(data => {
         this.setState({
+          playlistIds: [...this.state.playlistIds, data.data.id],
           playlist: [...this.state.playlist, data.data]
         })
         console.log(this.state.playlist)
@@ -66,7 +68,7 @@ class App extends Component {
           <Route exact path="/randomShow" render={() => <RandomShow/>}/>
           <Route exact path="/playlist" render={() => <Playlist playlist={this.state.playlist}/>}/>
           <Route exact path="/:year" render={({ match }) => this.checkYear(match.params.year)}/>
-          <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year} addToPlaylist={this.addToPlaylist}/>}/>
+          <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year} addToPlaylist={this.addToPlaylist} playlistIds={this.state.playlistIds}/>}/>
           <Route render={() => <ErrorComponent message="So sorry, that page is not found."/>}/>
         </Switch>
       </main>

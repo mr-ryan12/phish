@@ -40,6 +40,7 @@ class ShowDetails extends Component {
               title={track.title}
               mp3={track.mp3}
               addToPlaylist={this.props.addToPlaylist}
+              playlistIds={this.props.playlistIds}
             />
           )
         })
@@ -83,7 +84,8 @@ class ShowDetails extends Component {
 ShowDetails.propTypes = {
   showId: PropTypes.string.isRequired,
   showYear: PropTypes.string.isRequired,
-  addToPlaylist: PropTypes.func.isRequired
+  addToPlaylist: PropTypes.func.isRequired,
+  playlistIds: PropTypes.array.isRequired
 }
 
 export default ShowDetails
