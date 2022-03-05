@@ -10,7 +10,7 @@ const checkButtons = (loading, year) => {
         <Link to="/">Home</Link>
         <Link to={`/${year}`} className="back-to-shows-link">{`Back to ${year} Shows`}</Link>
         <Link to="/randomShow" className="random-show-link-tracks">Random Show</Link>
-        <Link to="/playlist" className="random-show-link-tracks">Playlist</Link>
+        <Link to="/playlist" className="random-show-link-tracks" data-cy="playlist-link">Playlist</Link>
       </>
     )
   }
