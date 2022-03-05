@@ -1,0 +1,17 @@
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .tracks-page-venue-name {
+    margin-left: 6%;
+  }
+
+  .tracks-page-show-date {
+    margin-left: 6%;
+  }
+  
+  .tracks-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+}

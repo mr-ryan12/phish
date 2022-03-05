@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 98vw;
+  width: 100%;
 }
 
 .nav-link-container-random-show {
@@ -30,4 +30,14 @@
 
 .nav-link-container-random-show > button:hover {
   cursor: pointer;
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .navigation-container-random-show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 109%;
+  }
 }

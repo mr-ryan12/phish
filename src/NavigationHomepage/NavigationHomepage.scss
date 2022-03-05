@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 98vw;
+  width: 100%;
 }
 
 .nav-link-container-home {
@@ -25,8 +25,35 @@
 
 .random-show-link-home {
   width: 10vw;
+  background: none;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition-duration: .15s;
+    box-shadow: 5px 5px 25px gold;
+  }
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition-duration: .15s;
+    box-shadow: 5px 5px 25px gold;
+  }
 }
 
 .navigation-container > button:hover {
   cursor: pointer;
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .navigation-container-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 109%;
+  }
+
+  .random-show-link-home {
+    width: 20vw;
+  }
 }

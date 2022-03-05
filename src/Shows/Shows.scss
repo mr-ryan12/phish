@@ -10,3 +10,16 @@
 .shows-page-heading {
   color: #FFF;
 }
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .shows-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .shows-page-heading {
+    margin-left: 4%;
+  }
+}

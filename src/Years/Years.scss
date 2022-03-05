@@ -6,3 +6,14 @@
   width: 96vw;
   margin: 0;
 }
+
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .years-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+}
