@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { fetchData } from '../apiCalls'
-import { cleanDate, cleanTrackNames } from '../utils'
+import { cleanTrackNames } from '../utils'
 import PropTypes from 'prop-types'
 import Tracks from '../Tracks/Tracks'
 import Loading from '../Loading/Loading'
@@ -41,6 +41,7 @@ class ShowDetails extends Component {
               mp3={track.mp3}
               addToPlaylist={this.props.addToPlaylist}
               playlistIds={this.props.playlistIds}
+              playlistError={this.props.playlistError}
             />
           )
         })
@@ -85,7 +86,8 @@ ShowDetails.propTypes = {
   showId: PropTypes.string.isRequired,
   showYear: PropTypes.string.isRequired,
   addToPlaylist: PropTypes.func.isRequired,
-  playlistIds: PropTypes.array.isRequired
+  playlistIds: PropTypes.array.isRequired,
+  playlistError: PropTypes.bool.isRequired
 }
 
 export default ShowDetails
