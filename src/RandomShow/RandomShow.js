@@ -7,8 +7,8 @@ import RandomShowDisplay from './RandomShowDisplay'
 import '../ShowDetails/ShowDetails.scss'
 
 class RandomShow extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       show: '',
       isLoading: true,
@@ -39,6 +39,8 @@ class RandomShow extends Component {
               id={track.id}
               title={track.title}
               mp3={track.mp3}
+              addToPlaylist={this.props.addToPlaylist}
+              playlistIds={this.props.playlistIds}
             />
           )
         })

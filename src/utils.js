@@ -28,4 +28,12 @@ const cleanTrackNames = show => {
   return cleanDate(show)
 }
 
-export { cleanDate, cleanDates, cleanTrackNames }
+const cleanTrackName = track => {
+  if (track.title.includes('Funky')) {
+    track.title = 'Funky'
+  }
+
+  return track
+}
+
+export { cleanDate, cleanDates, cleanTrackNames, cleanTrackName }

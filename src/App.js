@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { fetchData } from './apiCalls'
+import { cleanTrackName } from './utils'
 import Years from './Years/Years'
 import Shows from './Shows/Shows'
 import ShowDetails from './ShowDetails/ShowDetails'
@@ -53,7 +54,7 @@ class App extends Component {
       .then(data => {
         this.setState({
           playlistIds: [...this.state.playlistIds, data.data.id],
-          playlist: [...this.state.playlist, data.data]
+          playlist: [...this.state.playlist, cleanTrackName(data.data)]
         })
         console.log(this.state.playlist)
       })
@@ -65,7 +66,7 @@ class App extends Component {
       <main className="App">
         <Switch>
           <Route exact path="/" render={() => this.checkFetch(this.state.years)}/>
-          <Route exact path="/randomShow" render={() => <RandomShow/>}/>
+          <Route exact path="/randomShow" render={() => <RandomShow addToPlaylist={this.addToPlaylist} playlistIds={this.state.playlistIds}/>}/>
           <Route exact path="/playlist" render={() => <Playlist playlist={this.state.playlist}/>}/>
           <Route exact path="/:year" render={({ match }) => this.checkYear(match.params.year)}/>
           <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year} addToPlaylist={this.addToPlaylist} playlistIds={this.state.playlistIds}/>}/>
