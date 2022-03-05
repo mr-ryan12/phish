@@ -29,6 +29,12 @@ describe('Main Page User Flow', () => {
       .should('have.text', 'Random Show')
   });
 
+  it('Should have a "Playlist" link', () => {
+    cy.get('a')
+      .eq(1)
+      .should('have.text', 'Playlist')
+  });
+
   it('Should have year cards', () => {
     cy.get('.year-card')
       .should('have.length', 3)
