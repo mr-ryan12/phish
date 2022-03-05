@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import './Tracks.scss'
 
 const checkPlaylist = (playlistIds, id, addToPlaylist, playlistError, isClicked, isClickedId) => {
-  if (isClicked && isClickedId === id) {
-    return
-  } else if (playlistError) {
+  if (playlistError) {
     return <p>Something went wrong</p>
+  } else if (isClicked && isClickedId === id) {
+    return 
   } else if (playlistIds.includes(id)) {
     return <p>Added to Playlist</p>
   } else {
