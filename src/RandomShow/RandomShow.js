@@ -4,6 +4,7 @@ import { cleanTrackNames } from '../utils'
 import Loading from '../Loading/Loading'
 import Tracks from '../Tracks/Tracks'
 import RandomShowDisplay from './RandomShowDisplay'
+import PropTypes from 'prop-types'
 import '../ShowDetails/ShowDetails.scss'
 
 class RandomShow extends Component {
@@ -41,6 +42,9 @@ class RandomShow extends Component {
               mp3={track.mp3}
               addToPlaylist={this.props.addToPlaylist}
               playlistIds={this.props.playlistIds}
+              playlistError={this.props.playlistError}
+              isClicked={this.props.isClicked}
+              isClickedId={this.props.isClickedId}
             />
           )
         })
@@ -62,6 +66,14 @@ class RandomShow extends Component {
       </>
     )
   }
+}
+
+RandomShow.propTypes = {
+  addToPlaylist: PropTypes.func.isRequired,
+  playlistIds: PropTypes.array.isRequired,
+  playlistError: PropTypes.bool.isRequired,
+  isClicked: PropTypes.bool.isRequired,
+  isClickedId: PropTypes.number.isRequired
 }
 
 export default RandomShow

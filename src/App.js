@@ -83,7 +83,7 @@ class App extends Component {
       <main className="App">
         <Switch>
           <Route exact path="/" render={() => this.checkFetch(this.state.years)}/>
-          <Route exact path="/randomShow" render={() => <RandomShow addToPlaylist={this.addToPlaylist} playlistIds={this.state.playlistIds}/>}/>
+          <Route exact path="/randomShow" render={() => <RandomShow addToPlaylist={this.addToPlaylist} playlistIds={this.state.playlistIds} playlistError={this.state.playlistError} isClicked={this.state.isClicked} isClickedId={this.state.isClickedId}/>}/>
           <Route exact path="/playlist" render={() => <Playlist playlist={this.state.playlist} deleteFromPlaylist={this.deleteFromPlaylist}/>}/>
           <Route exact path="/:year" render={({ match }) => this.checkYear(match.params.year)}/>
           <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year} addToPlaylist={this.addToPlaylist} playlistIds={this.state.playlistIds} playlistError={this.state.playlistError} isClicked={this.state.isClicked} isClickedId={this.state.isClickedId}/>}/>
