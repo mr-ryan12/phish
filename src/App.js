@@ -62,8 +62,6 @@ class App extends Component {
           isClicked: false,
           isClickedId: 0
         })
-        console.log('playlist array', this.state.playlist)
-        console.log('playlist id array', this.state.playlistIds)
       })
       .catch(() => this.setState({ playlistError: true }))
   }
