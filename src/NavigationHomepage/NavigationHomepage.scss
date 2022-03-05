@@ -25,6 +25,19 @@
 
 .random-show-link-home {
   width: 10vw;
+  background: none;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition-duration: .15s;
+    box-shadow: 5px 5px 25px gold;
+  }
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition-duration: .15s;
+    box-shadow: 5px 5px 25px gold;
+  }
 }
 
 .navigation-container > button:hover {
