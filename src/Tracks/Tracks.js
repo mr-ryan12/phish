@@ -6,7 +6,7 @@ const checkPlaylist = (playlistIds, id, addToPlaylist, playlistError, isClicked,
   if (playlistError) {
     return <p>Something went wrong</p>
   } else if (isClicked && isClickedId === id) {
-    return 
+    return <p></p>
   } else if (playlistIds.includes(id)) {
     return <p>Added to Playlist</p>
   } else {
