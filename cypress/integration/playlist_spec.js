@@ -97,3 +97,50 @@ describe('Playlist User Flow', () => {
       .should('have.text', 'No tracks yet! Please add some!')
   });
 });
+
+describe('Playlist User Flow - Broken Fetch', () => {
+  beforeEach(() => {
+    cy.intercept('https://phish.in/api/v1/tracks/26152', { statusCode: 404 })
+    cy.visit('http://localhost:3000/1983-1987/1324')
+  });
+
+  it('Should let the user know something went wrong', () => {
+    cy.get('.add-to-playlist-button')
+      .first()
+      .click()
+      .get('.track-card')
+      .contains('Something went wrong')
+  });
+});
+
+describe('Playlist User Flow - Incorrect URL Entry', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/playlistasdf')
+  });
+
+  it('Should have a background image', () => {
+    cy.get('body')
+      .should('have.css', 'background-image', 'url("http://localhost:3000/static/media/backdrop.5a496141d28fb4362490.jpeg")')
+  });
+
+  it('Should have an error message', () => {
+    cy.get('h2')
+      .should('exist')
+      .should('have.text', 'So sorry, that page is not found.')
+  });
+
+  it('Should have a link back to the home page', () => {
+    cy.get('a')
+      .should('exist')
+      .should('have.text', 'Home')
+  });
+
+  it('Should take the user back to the home page', () => {
+    cy.url()
+      .should('eq', 'http://localhost:3000/playlistasdf')
+      .get('a')
+      .click()
+      .url()
+      .should('eq', 'http://localhost:3000/')
+  });
+});
