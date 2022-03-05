@@ -42,6 +42,8 @@ class ShowDetails extends Component {
               addToPlaylist={this.props.addToPlaylist}
               playlistIds={this.props.playlistIds}
               playlistError={this.props.playlistError}
+              isClicked={this.props.isClicked}
+              isClickedId={this.props.isClickedId}
             />
           )
         })
@@ -87,7 +89,9 @@ ShowDetails.propTypes = {
   showYear: PropTypes.string.isRequired,
   addToPlaylist: PropTypes.func.isRequired,
   playlistIds: PropTypes.array.isRequired,
-  playlistError: PropTypes.bool.isRequired
+  playlistError: PropTypes.bool.isRequired,
+  isClicked: PropTypes.bool.isRequired,
+  isClickedId: PropTypes.number.isRequired
 }
 
 export default ShowDetails

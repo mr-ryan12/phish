@@ -18,7 +18,9 @@ class App extends Component {
       playlist: [],
       playlistIds: [],
       error: false,
-      playlistError: false
+      playlistError: false,
+      isClicked: false,
+      isClickedId: 0
     }
   }
 
@@ -51,11 +53,14 @@ class App extends Component {
   }
 
   addToPlaylist = id => {
+    this.setState({ isClicked: true, isClickedId: id })
     fetchData(`tracks/${id}`)
       .then(data => {
         this.setState({
           playlistIds: [...this.state.playlistIds, data.data.id],
-          playlist: [...this.state.playlist, cleanTrackData(data.data)]
+          playlist: [...this.state.playlist, cleanTrackData(data.data)],
+          isClicked: false,
+          isClickedId: 0
         })
         console.log('playlist array', this.state.playlist)
         console.log('playlist id array', this.state.playlistIds)
@@ -81,7 +86,7 @@ class App extends Component {
           <Route exact path="/randomShow" render={() => <RandomShow addToPlaylist={this.addToPlaylist} playlistIds={this.state.playlistIds}/>}/>
           <Route exact path="/playlist" render={() => <Playlist playlist={this.state.playlist} deleteFromPlaylist={this.deleteFromPlaylist}/>}/>
           <Route exact path="/:year" render={({ match }) => this.checkYear(match.params.year)}/>
-          <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year} addToPlaylist={this.addToPlaylist} playlistIds={this.state.playlistIds} playlistError={this.state.playlistError}/>}/>
+          <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year} addToPlaylist={this.addToPlaylist} playlistIds={this.state.playlistIds} playlistError={this.state.playlistError} isClicked={this.state.isClicked} isClickedId={this.state.isClickedId}/>}/>
           <Route render={() => <ErrorComponent message="So sorry, that page is not found."/>}/>
         </Switch>
       </main>
