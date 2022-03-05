@@ -6,6 +6,7 @@ import Shows from './Shows/Shows'
 import ShowDetails from './ShowDetails/ShowDetails'
 import RandomShow from './RandomShow/RandomShow'
 import ErrorComponent from './ErrorComponent/ErrorComponent'
+import Playlist from './Playlist/Playlist'
 import './App.scss'
 
 class App extends Component {
@@ -63,6 +64,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => this.checkFetch(this.state.years)}/>
           <Route exact path="/randomShow" render={() => <RandomShow/>}/>
+          <Route exact path="/playlist" render={() => <Playlist playlist={this.state.playlist}/>}/>
           <Route exact path="/:year" render={({ match }) => this.checkYear(match.params.year)}/>
           <Route exact path="/:year/:id" render={({ match }) => <ShowDetails showId={match.params.id} showYear={match.params.year} addToPlaylist={this.addToPlaylist}/>}/>
           <Route render={() => <ErrorComponent message="So sorry, that page is not found."/>}/>
