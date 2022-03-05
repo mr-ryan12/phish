@@ -1,22 +1,17 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
 .shows-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  padding: 19px;
-  width: 96vw;
-  margin: 0;
+  @include display-grid();
 }
 
 .shows-page-heading {
-  color: #FFF;
+  color: $mainTextColor;
 }
 
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .shows-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    @include display-flex(column, flex-start, center)
   }
 
   .shows-page-heading {

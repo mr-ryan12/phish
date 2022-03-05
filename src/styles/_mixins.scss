@@ -19,3 +19,12 @@
     box-shadow: 5px 5px 25px gold;
   }
 }
+
+@mixin display-grid() {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 19px;
+  width: 96vw;
+  margin: 0;
+}
