@@ -6,17 +6,23 @@ import '../Tracks/Tracks.scss'
 
 const Playlist = props => {
   const allPlaylistTracks = props.playlist.map(track => {
-    <section className="track-card">
-      <h2>{track.title}</h2>
-      <button>Delete</button>
-      <video controls name="media" src={track.mp3} className="track-card-audio"></video>
-    </section>
+    return (
+      <PlaylistCard
+        key={track.id}
+        id={track.id}
+        title={track.title}
+        mp3={track.mp3}
+      />
+    )
   })
   return (
-    <section className="playlist-container">
+    <>
       <h2 className="playlist-header">Playlist</h2>
-      {allPlaylistTracks.length === 0 ? <p>No tracks yet! Please add some!</p> : allPlaylistTracks}
-    </section>
+      {allPlaylistTracks.length === 0 && <p className="empty-playlist-message">No tracks yet! Please add some!</p>}
+      <section className="playlist-container">
+        {allPlaylistTracks.length !== 0 ? allPlaylistTracks : null}
+      </section>
+    </>
   )
 }
 
