@@ -6,7 +6,7 @@ const checkPlaylist = (playlistIds, id, addToPlaylist) => {
   if (playlistIds.includes(id)) {
     return <p>Added to Playlist</p>
   } else {
-    return <button onClick={() => addToPlaylist(id)}>Add to Playlist</button>
+    return <button onClick={() => addToPlaylist(id)} className="add-to-playlist-button">Add to Playlist</button>
   }
 }
 

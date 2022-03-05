@@ -13,6 +13,17 @@
   @include hover-transform();
 }
 
+.remove-from-playlist-button {
+  width: 50%;
+  height: 3.5vh;
+  border-radius: 10px;
+  border: none;
+  background-color: #4b0092;
+  color: $mainTextColor;
+  font-family: inherit;
+  align-self: center;
+}
+
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .playlist-card {
     @include display-flex(column, space-between, normal);
