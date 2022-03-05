@@ -63,6 +63,7 @@ describe('Main Page User Flow', () => {
 
   it('Should have a clickable link to a random show', () => {
     cy.get('.random-show-link-home')
+      .first()
       .click()
       .url()
       .should('eq', 'http://localhost:3000/randomShow')
