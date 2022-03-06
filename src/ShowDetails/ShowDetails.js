@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { fetchData } from '../apiCalls'
-import { cleanTrackNames } from '../utils'
+import { cleanShowName } from '../utils'
 import PropTypes from 'prop-types'
 import Tracks from '../Tracks/Tracks'
 import Loading from '../Loading/Loading'
@@ -60,7 +60,7 @@ class ShowDetails extends Component {
       this.setState({error: true, isLoading: false})
     } else {
       this.setState({
-        show: cleanTrackNames(show),
+        show: cleanShowName(show),
         isLoading: false,
         error: false
       })
