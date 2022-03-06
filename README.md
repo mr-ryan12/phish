@@ -11,7 +11,7 @@
 
 ## Abstract
 
-Welcome to Phish! This is a music listening application where Phish Phans can enjoy listening to songs from all of their live shows dating back to 1983! Users can view a list of all shows categorized by the year played, click on a show and view all of the songs played at the show. They also have the option to add thier favorite songs to a playlist!  
+Welcome to Phish! This is a music listening application where Phish Phans can enjoy listening to songs from all of their live shows dating back to 1983! Users can view a list of all shows categorized by the year played, click on a show and view all of the songs played at the show. They also have the option to add their favorite songs to a playlist!  
   
 Too many shows to filter through and pick one? Not to worry! Simply click on the "Random Show" link and a show will be randomly generated with all of the tracks available for listening!  
   
