@@ -5,13 +5,14 @@ import PropTypes from 'prop-types'
 import './Shows.scss'
 
 const ShowsDisplay = props => {
+  const display = props.isLoading ? <Loading/> : props.allShows
   return (
     <>
       <NavigationShows isLoading={props.isLoading}/>
       <section className="main-shows-container">
         <h2 className="shows-page-heading">{props.year} Shows</h2>
         <section className="shows-container">
-          {props.isLoading ? <Loading/> : props.allShows}
+          {display}
         </section>
       </section>
     </>
