@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { fetchData } from '../apiCalls'
-import { cleanDates } from '../utils.js'
+import { cleanShows } from '../utils.js'
 import PropTypes from 'prop-types'
 import ShowsCard from '../ShowsCard/ShowsCard'
 import ShowsDisplay from './ShowsDisplay'
@@ -17,14 +17,21 @@ class Shows extends Component {
   }
 
   componentDidMount = () => {
+    this._isMounted = true;
     fetchData(`years/${this.props.year}.json`)
       .then(data => {
-        this.setState({
-          shows: cleanDates(data.data),
-          isLoading: false
-        })
+        if (this._isMounted) {
+          this.setState({
+            shows: cleanShows(data.data),
+            isLoading: false
+          })
+        }
       })
       .catch(() => this.setState({ error: true }))
+  }
+
+  componentWillUnmount = () => {
+    this._isMounted = false;
   }
   
   render() {
@@ -42,7 +49,7 @@ class Shows extends Component {
       )
     })
 
-    const componentForDisplay = this.state.error ? <h2 style={{color: 'white'}}>Something went wrong</h2>
+    const componentForDisplay = this.state.error ? <h2 className="shows-page-error-message">Something went wrong</h2>
       : <ShowsDisplay
           isLoading={this.state.isLoading}
           year={this.props.year}

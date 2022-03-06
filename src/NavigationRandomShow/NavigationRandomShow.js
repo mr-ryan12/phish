@@ -22,7 +22,7 @@ const NavigationRandomShow = props => {
       <section className="nav-link-container-random-show">
         {checkButtons(props.isLoading)}
       </section>
-  </section>
+    </section>
   )
 }
 
