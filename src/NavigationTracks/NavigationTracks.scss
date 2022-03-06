@@ -3,7 +3,7 @@
 
 .navigation-container-tracks {
   @include display-flex(column, center, center);
-  width: 100vw;
+  width: 100%;
 }
 
 .nav-link-container-tracks {
