@@ -59,7 +59,8 @@ SASS
 - You can close your local server at any time by pressing `CTRL + c` in the terminal window running your server
    
 ## Links  
-Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-3/showcase.html)
+Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-3/showcase.html)  
+Visit the deployed application [here](https://phish-showcase.vercel.app/)
 
 ## Challenges and Wins  
 This was by far the largest dataset I have worked with. It was interesting to learn about handling asynchronous tasks and manipulating large datasets to display and interact with the information. I would like to implement a search feature and a way to store the playlist data in a future iteration.
