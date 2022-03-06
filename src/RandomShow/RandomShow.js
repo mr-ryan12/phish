@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { fetchData } from '../apiCalls'
-import { cleanTrackNames, cleanShowName } from '../utils'
+import { cleanShowName } from '../utils'
 import Loading from '../Loading/Loading'
 import Tracks from '../Tracks/Tracks'
 import RandomShowDisplay from './RandomShowDisplay'

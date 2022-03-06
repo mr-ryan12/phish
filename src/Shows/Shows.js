@@ -17,14 +17,21 @@ class Shows extends Component {
   }
 
   componentDidMount = () => {
+    this._isMounted = true;
     fetchData(`years/${this.props.year}.json`)
       .then(data => {
-        this.setState({
-          shows: cleanShows(data.data),
-          isLoading: false
-        })
+        if (this._isMounted) {
+          this.setState({
+            shows: cleanShows(data.data),
+            isLoading: false
+          })
+        }
       })
       .catch(() => this.setState({ error: true }))
+  }
+
+  componentWillUnmount = () => {
+    this._isMounted = false;
   }
   
   render() {
