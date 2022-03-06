@@ -38,4 +38,8 @@
     @include display-flex(column, center, center);
     width: 109%;
   }
+
+  .nav-link-container-tracks > a {
+    margin: 10%;
+  }
 }
