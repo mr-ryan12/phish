@@ -49,7 +49,7 @@ class Shows extends Component {
       )
     })
 
-    const componentForDisplay = this.state.error ? <h2 style={{color: 'white'}}>Something went wrong</h2>
+    const componentForDisplay = this.state.error ? <h2 className="shows-page-error-message">Something went wrong</h2>
       : <ShowsDisplay
           isLoading={this.state.isLoading}
           year={this.props.year}

@@ -9,8 +9,8 @@ const RandomShowDisplay = props => {
     <>
       <NavigationRandomShow isLoading={props.isLoading} />
       <section className="show-details-container">
-        <h2 style={{color: 'white'}} className="random-show-venue-name">{props.venueName}</h2>
-        <p style={{color: 'white'}} className="random-show-date">{props.date}</p>
+        <h2 className="random-show-venue-name">{props.venueName}</h2>
+        <p className="random-show-date">{props.date}</p>
         <section className="tracks-container">
           {props.renderTracks()}
         </section>
