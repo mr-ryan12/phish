@@ -37,6 +37,9 @@ class App extends Component {
   checkYear = year => {
     const allYears = this.state.years.map(year => year.date)
 
+    if (!this.state.error && !allYears.length) {
+      return
+    }
     if (!allYears.includes(year)) {
       return <ErrorComponent message="So sorry, that page is not found."/>
     } else {
