@@ -19,13 +19,15 @@ const Playlist = props => {
       />
     )
   })
+  const checkPlaylistMessage = allPlaylistTracks.length === 0 ? <h2 className="empty-playlist-message">No tracks yet! Please add some!</h2> : null
+  const checkPlaylistContainer = allPlaylistTracks.length !== 0 ? allPlaylistTracks : null
   return (
     <>
       <NavigationPlaylist/>
       <h2 className="playlist-header">Playlist</h2>
-      {allPlaylistTracks.length === 0 && <h2 className="empty-playlist-message">No tracks yet! Please add some!</h2>}
+      {checkPlaylistMessage}
       <section className="playlist-container">
-        {allPlaylistTracks.length !== 0 ? allPlaylistTracks : null}
+        {checkPlaylistContainer}
       </section>
     </>
   )
