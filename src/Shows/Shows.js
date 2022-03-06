@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { fetchData } from '../apiCalls'
-import { cleanDates } from '../utils.js'
+import { cleanShows } from '../utils.js'
 import PropTypes from 'prop-types'
 import ShowsCard from '../ShowsCard/ShowsCard'
 import ShowsDisplay from './ShowsDisplay'
@@ -20,7 +20,7 @@ class Shows extends Component {
     fetchData(`years/${this.props.year}.json`)
       .then(data => {
         this.setState({
-          shows: cleanDates(data.data),
+          shows: cleanShows(data.data),
           isLoading: false
         })
       })

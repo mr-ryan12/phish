@@ -24,6 +24,7 @@ const cleanTrackNames = show => {
     if (track.title.includes('Funky')) {
       track.title = 'Funky'
     }
+    return track
   })
   return cleanDate(show)
 }
@@ -39,4 +40,20 @@ const cleanTrackData = track => {
   return track
 }
 
-export { cleanDate, cleanDates, cleanTrackNames, cleanTrackData }
+const cleanShows = shows => {
+  const cleanedShows = shows.map(show => {
+    if (show.venue_name.includes('Gallagher')) {
+      show.venue_name = 'Gallagher\'s'
+    }
+    if (show.venue_name.includes('Biddy')) {
+      show.venue_name = 'Biddy Mulligan\'s'
+    }
+    if (show.venue_name.includes('Nietzsche')) {
+      show.venue_name = 'Nietzsche\'s'
+    }
+    return show
+  })
+  return cleanDates(cleanedShows)
+}
+
+export { cleanDate, cleanDates, cleanTrackNames, cleanTrackData, cleanShows }
