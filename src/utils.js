@@ -24,6 +24,9 @@ const cleanTrackNames = show => {
     if (track.title.includes('Funky')) {
       track.title = 'Funky'
     }
+    if (track.title.includes('Meat')) {
+      track.title = 'Meat'
+    }
     return track
   })
   return cleanDate(show)
@@ -52,7 +55,9 @@ const cleanTrackData = track => {
   if (track.title.includes('Funky')) {
     track.title = 'Funky'
   }
-
+  if (track.title.includes('Meat')) {
+    track.title = 'Meat'
+  }
   return track
 }
 
