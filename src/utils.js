@@ -39,6 +39,9 @@ const cleanShowName = show => {
   if (show.venue_name.includes('Nietzsche')) {
     show.venue_name = 'Nietzsche\'s'
   }
+  if (show.venue_name.includes('Huxley')) {
+    show.venue_name = 'Huxley\'s Neue Welt'
+  }
   return cleanTrackNames(show)
 }
 
@@ -63,6 +66,9 @@ const cleanShows = shows => {
     }
     if (show.venue_name.includes('Nietzsche')) {
       show.venue_name = 'Nietzsche\'s'
+    }
+    if (show.venue_name.includes('Huxley')) {
+      show.venue_name = 'Huxley\'s Neue Welt'
     }
     return show
   })
