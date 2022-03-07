@@ -1,7 +1,8 @@
 # Phish
   
 ## Table of Contents
-- [Abstract](#abstract)
+- [Abstract](#abstract)  
+- [Learning Goals](#learning-goals)
 - [Screenshots](#screenshots)
 - [Technologies](#technologies)
 - [Setup](#setup)
@@ -15,8 +16,13 @@ Welcome to Phish! This is a music listening application where Phish Phans can en
   
 Too many shows to filter through and pick one? Not to worry! Simply click on the "Random Show" link and a show will be randomly generated with all of the tracks available for listening!  
   
-Feel free to check out the application [here](https://phish-showcase.vercel.app/)
-
+Feel free to check out the application [here](https://phish-showcase.vercel.app/)  
+  
+## Learning Goals
+- Successfully build and deploy a fully functional React application in a short amount of time  
+- Gain technical exposure to working with React Router and Cypress
+- Learn how to handle asynchronous operations after a component has unmounted
+- Effectively stub network requests that require fetching test data
 ## Screenshots  
 View of the home page  
 ![home-page](https://user-images.githubusercontent.com/62816754/156944818-52bca09a-e000-492e-b55d-2fefe0fd78c9.gif)
