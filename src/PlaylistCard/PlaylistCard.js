@@ -8,7 +8,7 @@ const PlaylistCard = props => {
       <h2>{props.title}</h2>
       <p>{props.location}</p>
       <p>{props.date}</p>
-      <button onClick={() => props.deleteFromPlaylist(props.id)} className="remove-from-playlist-button">Remove from Playlist</button>
+      <button onClick={() => props.deleteFromPlaylist(props.id)} className="remove-from-playlist-button">Remove</button>
       <video controls name="media" src={props.mp3} className="track-card-audio"></video>
     </section>
   )
