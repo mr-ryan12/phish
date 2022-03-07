@@ -15,16 +15,22 @@ class ShowDetails extends Component {
       show: '',
       isLoading: true,
       error: false,
-      years: []
+      years: [],
     }
   }
 
   componentDidMount = () => {
-    Promise.all([fetchData('years.json?include_show_counts=true'), fetchData(`shows/${this.props.showId}.json`)])
-      .then(data => {
-        this.checkUrl(data[0].data, data[1].data)
-      })
-      .catch(() => this.setState({error: true, isLoading: false}))
+    const isANumber = /^\d+$/.test(this.props.showId)
+
+    if (!isANumber) {
+      this.setState({error: true, isLoading: false})
+    } else {
+      Promise.all([fetchData('years.json?include_show_counts=true'), fetchData(`shows/${this.props.showId}.json`)])
+        .then(data => {
+          this.checkUrl(data[0].data, data[1].data)
+        })
+        .catch(() => this.setState({error: true, isLoading: false }))
+    }
   }
 
   renderTracks = () => {
@@ -57,7 +63,7 @@ class ShowDetails extends Component {
     const isShowIdANumber = /^\d+$/.test(this.props.showId)
 
     if (!allYears.includes(yearInUrl) || !isShowIdANumber) {
-      this.setState({error: true, isLoading: false})
+      this.setState({ error: true, isLoading: false })
     } else {
       this.setState({
         show: cleanShowName(show),

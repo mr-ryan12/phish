@@ -24,6 +24,9 @@ const cleanTrackNames = show => {
     if (track.title.includes('Funky')) {
       track.title = 'Funky'
     }
+    if (track.title.includes('Meat')) {
+      track.title = 'Meat'
+    }
     return track
   })
   return cleanDate(show)
@@ -39,6 +42,9 @@ const cleanShowName = show => {
   if (show.venue_name.includes('Nietzsche')) {
     show.venue_name = 'Nietzsche\'s'
   }
+  if (show.venue_name.includes('Huxley')) {
+    show.venue_name = 'Huxley\'s Neue Welt'
+  }
   return cleanTrackNames(show)
 }
 
@@ -49,7 +55,9 @@ const cleanTrackData = track => {
   if (track.title.includes('Funky')) {
     track.title = 'Funky'
   }
-
+  if (track.title.includes('Meat')) {
+    track.title = 'Meat'
+  }
   return track
 }
 
@@ -63,6 +71,9 @@ const cleanShows = shows => {
     }
     if (show.venue_name.includes('Nietzsche')) {
       show.venue_name = 'Nietzsche\'s'
+    }
+    if (show.venue_name.includes('Huxley')) {
+      show.venue_name = 'Huxley\'s Neue Welt'
     }
     return show
   })
