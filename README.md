@@ -8,6 +8,7 @@
 - [Setup](#setup)
 - [Links](#links)
 - [Challenges and Wins](#challenges-and-wins)
+- [Acknowledgments](#acknowledgments)
 - [Contributors](#contributors)
 
 ## Abstract
@@ -71,8 +72,9 @@ Visit the deployed application [here](https://phish-showcase.vercel.app/)
 ## Challenges and Wins  
 This was by far the largest dataset I have worked with. It was interesting to learn about handling asynchronous tasks and manipulating large datasets to display and interact with the information. I would like to implement a search feature and a way to store the playlist data in a future iteration.
   
-## Acknowlegements  
-Many thanks to [Phish.in]('https://phish.in/') for building a fantastic resource!  
+## Acknowledgments  
+Many thanks to [Phish.in](https://phish.in/) for building a fantastic resource!  
+Also a big thank you to [loading.io](https://loading.io/) for making animations easy!  
   
 ## Contributors    
 [Ryan McBride](https://github.com/mr-ryan12)
