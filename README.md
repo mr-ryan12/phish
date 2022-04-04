@@ -43,7 +43,7 @@ View a randomly generated show
 Optimized for Mobile  
 ![mobile](https://user-images.githubusercontent.com/62816754/156946053-a012d7fc-b6c5-47c9-9fe8-4dcd6c528101.gif)  
 
-Designed with accessibility in mind
+Designed with accessibility in mind  
 ![accessibility](https://user-images.githubusercontent.com/62816754/153779998-2e9df566-6394-45c1-86b4-c2e266efbd1d.png)  
 
    
