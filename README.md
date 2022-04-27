@@ -26,22 +26,23 @@ Feel free to check out the application [here](https://phish-showcase.vercel.app/
 - Effectively stub network requests that require fetching test data
 ## Screenshots  
 View of the home page  
-![home-page](https://user-images.githubusercontent.com/62816754/156944818-52bca09a-e000-492e-b55d-2fefe0fd78c9.gif)
+![home_view_gif](https://user-images.githubusercontent.com/62816754/165428193-93d5731d-58b3-4a1f-bf37-97478ae2c1da.gif)  
   
 View shows after clicking on a year  
-![shows-page](https://user-images.githubusercontent.com/62816754/156944880-9be82c33-9a6a-400c-a3a9-b86c0924c82b.gif)  
+![shows_view_gif](https://user-images.githubusercontent.com/62816754/165428378-3753e898-c7db-4b9c-8fb9-34247b144ab5.gif)  
 
 View tracks for a show  
-![tracks-page](https://user-images.githubusercontent.com/62816754/156944929-2e08bdfd-8941-4cff-905b-b2a6a0475c3c.gif)  
+![tracks_view_gif](https://user-images.githubusercontent.com/62816754/165428568-5cfaf768-c8c8-4d01-b9bb-a81e301c1919.gif)  
 
 Add and remove tracks from the playlist  
 ![add-tracks-to-playlist](https://user-images.githubusercontent.com/62816754/156944995-b51582a7-e23c-476c-9d39-77854914a921.gif)  
 
 View a randomly generated show  
-![random-show](https://user-images.githubusercontent.com/62816754/156945056-5fc8730b-1729-47e8-bd31-4de2e3d04b2d.gif)  
+![random_show](https://user-images.githubusercontent.com/62816754/165429122-f94aeaa0-754b-40e8-a909-c6110ca30339.gif)  
   
 Optimized for Mobile  
-![mobile](https://user-images.githubusercontent.com/62816754/156946053-a012d7fc-b6c5-47c9-9fe8-4dcd6c528101.gif)  
+![mobile](https://user-images.githubusercontent.com/62816754/165429906-35cb3ade-f76b-4ada-97b9-5c8a38bd260c.gif)  
+
 
 Designed with accessibility in mind  
 ![accessibility](https://user-images.githubusercontent.com/62816754/153779998-2e9df566-6394-45c1-86b4-c2e266efbd1d.png)  

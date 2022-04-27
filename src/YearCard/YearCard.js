@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import phishLogo from '../assets/phish-logo.png'
+// import phishLogo from '../assets/phish-logo.png'
 import './YearCard.scss'
 
 const YearCard = props => {
