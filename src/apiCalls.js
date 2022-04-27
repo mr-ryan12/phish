@@ -14,6 +14,4 @@ const fetchData = path => {
     })
 }
 
-console.log(typeof process.env.REACT_APP_API_KEY)
-
 export { fetchData }
